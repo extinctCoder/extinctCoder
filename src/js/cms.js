@@ -7,6 +7,8 @@ import ProductsPreview from "./cms-preview-templates/products";
 import ValuesPreview from "./cms-preview-templates/values";
 import ContactPreview from "./cms-preview-templates/contact";
 
+import ProjectPreview from "./cms-preview-templates/project";
+
 
 // Example of creating a custom color widget
 class ColorControl extends React.Component {
@@ -27,3 +29,5 @@ CMS.registerPreviewTemplate("products", ProductsPreview);
 CMS.registerPreviewTemplate("values", ValuesPreview);
 CMS.registerPreviewTemplate("contact", ContactPreview);
 CMS.registerWidget("color", ColorControl);
+
+CMS.registerPreviewTemplate("project", ProjectPreview);

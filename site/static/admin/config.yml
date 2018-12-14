@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
 
-media_folder: "site/static/img" # Folder where user uploaded files should go
+media_folder: "site/data/img" # Folder where user uploaded files should go
 public_folder: "img"
 
 collections: # A list of collections the CMS should be able to edit
@@ -15,6 +15,22 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Intro Blurb", name: "description", widget: "text"}
       - {label: "Image", name: "image", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
+  - name: "project" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Project" # Used in the UI, ie.: "New Post"
+    folder: "site/data/project" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: "Github", name: "github", widget: "text"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Start Date", name: "start_date", widget: "datetime"}
+      - {label: "End Date", name: "end_date", widget: "datetime"}
+      - {label: "Youtube", name: "youtube", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Cover Image", name: "cover_image", widget: "image", required: false}
+      - {label: "Images", name: gallery, widget: object, fields: [
+              {label: "Heading", name: "heading", widget: string},
+              {label: "URL", name: "url", widget: "text"},
+              {label: "Image", name: "image", widget: "image"}]}
   - name: "pages"
     label: "Pages"
     files:
