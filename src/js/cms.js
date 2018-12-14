@@ -28,6 +28,7 @@ CMS.registerPreviewTemplate("post", PostPreview);
 CMS.registerPreviewTemplate("products", ProductsPreview);
 CMS.registerPreviewTemplate("values", ValuesPreview);
 CMS.registerPreviewTemplate("contact", ContactPreview);
+CMS.registerPreviewTemplate("project", ProjectPreview);
 CMS.registerWidget("color", ColorControl);
 
-CMS.registerPreviewTemplate("project", ProjectPreview);
+
