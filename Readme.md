@@ -12,8 +12,8 @@
 
 # 📊 GitHub Stats:
 
-![](https://github-readme-stats.vercel.app/api?username=extinctcoder&theme=default&hide_border=true&include_all_commits=false&count_private=true)<br/>
-![](https://github-readme-streak-stats.herokuapp.com/?user=extinctcoder&theme=default&hide_border=true)<br/>
+![](https://github-readme-stats.vercel.app/api?username=extinctcoder&theme=default&hide_border=true&include_all_commits=false&count_private=true)
+![](https://github-readme-streak-stats.herokuapp.com/?user=extinctcoder&theme=default&hide_border=true)
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=extinctcoder&theme=default&hide_border=true&include_all_commits=false&count_private=true&layout=compact)
 
 ## 🏆 GitHub Trophies
@@ -35,6 +35,7 @@
 ---
 
 [![](https://visitcount.itsvg.in/api?id=extinctcoder&icon=0&color=12)](https://visitcount.itsvg.in)
+[![](https://visitcount.itsvg.in/api?id=extinctcoder&label=Profile%20Views&pretty=true)](https://visitcount.itsvg.in)
 
 ## 💰 You can help me by Donating
 
