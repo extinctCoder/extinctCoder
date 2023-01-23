@@ -1,6 +1,6 @@
 # 💫 About Me:
 
-👋 Hi, I’m Sabbir Ahmed Shourov<br>👀 I’m interested in Python, Robotics, Artificial Intelligence & Dev-Ops.<br>🌱 I’m currently working as an R&D Engineer at ISTL<br>💞️ I’m looking to collaborate on Robotics & Machine Learning Projects.<br>📫 Contact me at write2shourov@gmail.com
+👋 Hi, I’m Sabbir Ahmed Shourov<br>👀 I’m interested in Python, Robotics, Artificial Intelligence & Dev-Ops.<br>🌱 I’m currently working as an R&D Engineer at ISTL.<br>💞️ I’m looking to collaborate on Robotics & Machine Learning Projects.<br>📫 Contact me at write2shourov@gmail.com .
 
 ## 🌐 Socials:
 
