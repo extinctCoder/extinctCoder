@@ -1,6 +1,14 @@
-<div align="center">
-  <img height="150" src="https://camo.githubusercontent.com/62da68eb62b1e5f175f7d1f0191dd89a653d7908feb22d37d4a0ab07365d6791/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f4d3967624264396e6244724f5475314d71782f67697068792e676966"  />
-</div>
+![](./profile-3d-contrib/profile-night-green.svg)
+-
+👋 Hi, I’m Sabbir Ahmed Shourov<br>👀 I’m interested in Python, Robotics, Artificial Intelligence & Dev-Ops.<br>🌱 I’m currently working as an R&D Engineer at ISTL.<br>💞️ I’m looking to collaborate on Robotics & Machine Learning Projects.<br>📫 Contact me at write2shourov@gmail.com
+
+
+
+## Find me around the web 🌎: <a href="https://github.com/sponsors/M0nica"><img align="left" width="150" height="150" src="https://github.com/M0nica/M0nica/blob/main/octomonica/m0nica-octocat-rotating.gif?raw=true"></a>
+- Learning in public on <a href="https://www.twitch.tv/blacktechdiva">Twitch</a> or <a href="https://www.monica.dev">monica.dev</a> 📹 ✍🏾
+- Tinkering with interactions on <a href="https://codepen.io/m0nica"> Codepen</a> 🏓
+- Sharing updates on <a href="https://www.linkedin.com/in/monicampowell/">LinkedIn</a> 💼
+
 
 ###
 
