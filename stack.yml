@@ -1,0 +1,18 @@
+- name: Golang
+  logo: go
+  url: https://golang.org/
+  color: '#7FD6EA'
+  projects:
+    - url: https://github.com/gleich/fgh
+    - url: https://github.com/gleich/gh_fsync
+    - url: https://github.com/gleich/nuke
+    - url: https://github.com/gleich/logoru
+    - url: https://github.com/gleich/statuser
+
+- name: Python
+  logo: python
+  url: https://www.python.org/
+  color: '#3C78A9'
+  projects:
+    - url: https://github.com/gleich/profile_stack
+    - url: https://github.com/gleich/Contribution-Hat
