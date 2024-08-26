@@ -1,5 +1,5 @@
 > THIS IS A WORK IN PROGRESS PROJECTS DATA SHOWN HERE MAY NOT BE AS ACURATE AS POSSIBLE
--
+---
 
 ![](./profile-3d-contrib/profile-night-green.svg)
 -
