@@ -1,3 +1,6 @@
+# THIS IS A WORK IN PROGRESS PROJECTS DATA SHOWN HERE MAY NOT BE AS ACURATE AS POSSIBLE
+
+
 ![](./profile-3d-contrib/profile-night-green.svg)
 -
 👋 Hi, I’m Sabbir Ahmed Shourov<br>👀 I’m interested in Python, Robotics, Artificial Intelligence & Dev-Ops.<br>🌱 I’m currently working as an R&D Engineer at ISTL.<br>💞️ I’m looking to collaborate on Robotics & Machine Learning Projects.<br>📫 Contact me at write2shourov@gmail.com
