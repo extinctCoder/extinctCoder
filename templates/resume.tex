@@ -1,0 +1,51 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{lastpage}
+\usepackage{titlecaps}
+\usepackage[T1]{fontenc} 
+\usepackage{fontawesome5}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[empty]{fullpage}
+\usepackage[default]{FiraSans} % set font here
+\usepackage[hidelinks]{hyperref}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim} % don't know where it is working
+\input{glyphtounicode}
+\usepackage[top=10mm,bottom=10mm,left=10mm,right=10mm]{geometry} % page margins
+
+% setting up fancy header
+\pagestyle{fancy}
+\fancyhf{}
+% \fancyfoot[C]{page no \thepage\ of \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% setting up additional features
+\urlstyle{same}
+\raggedbottom
+% \raggedright % right align text
+\setlength{\tabcolsep}{0in}
+\setlength{\footskip}{14pt}
+
+% section formatting
+\titleformat{\section}{\vspace{-4pt}\scshape\raggedright\large}{}{0em}{}[\color{black}\titlerule\vspace{-5pt}]
+
+% enabling ATS supports
+\pdfgentounicode=1
+
+
+\begin{document} % RESUME STARTS
+
+\include{commands} % loading custom commands
+\input{heading}
+\input{skills.tex}
+\input{experience}
+\input{projects}
+\input{education.tex}
+% \input{src/edu_projects.tex}
+
+\end{document} % RESUME ENDS

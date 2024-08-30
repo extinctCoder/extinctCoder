@@ -1,0 +1,16 @@
+\BLOCK{if education.enabled}
+\section{Education}
+\resumeSubHeadingListStart
+\BLOCK{for education in education.institutes}
+\resumeSubheading
+{\VAR{education.title}}{\VAR{education.start_date} - \VAR{education.end_date}}{\BLOCK{for degree in education.degree}\VAR{degree}\BLOCK{if not loop.last and loop.length>1}, \BLOCK{endif}\BLOCK{endfor}}{\VAR{education.location}}
+\BLOCK{if education.description}
+\resumeItemListStart
+\BLOCK{for item in education.description}
+\resumeItem{\textbf{\VAR{item.title}}: \VAR{item.content}}
+\BLOCK{endfor}
+\resumeItemListEnd
+\BLOCK{endif}
+\BLOCK{endfor}
+\resumeSubHeadingListEnd
+\BLOCK{endif}

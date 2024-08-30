@@ -1,0 +1,15 @@
+\BLOCK{if pro_experience.enabled}
+\section{Professional Experience}
+\resumeSubHeadingListStart
+\BLOCK{for experience in pro_experience.experiences}
+\resumeSubheading
+{\VAR{experience.title}}{\VAR{experience.start_date} -- \VAR{experience.end_date}}
+{\VAR{experience.position}}{\VAR{experience.location}}
+\resumeItemListStart
+\BLOCK{for item in experience.responsibilities}
+\resumeItem{\VAR{item}}
+\BLOCK{endfor}
+\resumeItemListEnd
+\BLOCK{endfor}
+\resumeSubHeadingListEnd
+\BLOCK{endif}

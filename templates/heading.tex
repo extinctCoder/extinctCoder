@@ -1,0 +1,6 @@
+\begin{center}
+    \textbf{\Huge \scshape \VAR{name}} \\ \vspace{5pt}
+    \BLOCK{ for link in links }
+        \href{\VAR{link.url}}{\seticon{\VAR{link.icon_alt}}\BLOCK{if link.emphasize}\underline{ \VAR{link.title}}\BLOCK{else} \VAR{link.title}\BLOCK{ endif }}\quad
+    \BLOCK{ endfor }
+\end{center}

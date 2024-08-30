@@ -1,0 +1,10 @@
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+                    \BLOCK{for skill in skills}
+                    \textbf{\VAR{skill.title}}{:\BLOCK{for item in skill.list} \VAR{item.title}, \BLOCK{if loop.last} etc.\BLOCK{endif}
+                        \BLOCK{endfor}}\BLOCK{if not loop.last}\\\BLOCK{endif}
+                    \BLOCK{endfor}
+              }}
+\end{itemize}
+

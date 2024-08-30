@@ -1,228 +1,244 @@
-sha: ~
-name: "Sabbir Ahmed Shourov"
-bio: "Back-end, API, Dev Ops Specialist | Robotics \\& AI Enthusiast 🚀💻🤖"
+sha: 9f1c2e6
+name: Sabbir Ahmed Shourov
+bio: Back-end, API, Dev Ops Specialist | Robotics \& AI Enthusiast 🚀💻🤖
 links:
-  - title: "(880) 1617-475 212"
-    url: "tel:+8801617475212"
-    icon: "heroicons:phone-solid"
-    icon_alt: "faPhone"
-    emphasize: false
-  - title: "extinctCoder"
-    url: "https://www.linkedin.com/in/extinctCoder"
-    icon: "devicon:linkedin"
-    icon_alt: "faLinkedin"
-    emphasize: false
-  - title: "extinctCoder"
-    url: "https://github.com/extinctCoder"
-    icon: "devicon:github"
-    icon_alt: "faGithub"
-    emphasize: true
-  - title: "fiery.snowflake"
-    url: "https://gitlab.com/fiery.snowflake"
-    icon: "devicon:gitlab"
-    icon_alt: "faGitlab"
-    emphasize: false
-  - title: "write2shourov@gmail.com"
-    url: "mailto:write2shourov@gmail.com"
-    icon: "heroicons:envelope-solid"
-    icon_alt: "faEnvelope"
-    emphasize: true
-  - title: "extinctCoder.github.io"
-    url: "https://extinctCoder.github.io"
-    icon: "heroicons:globe-alt"
-    icon_alt: "faGlobe"
-    emphasize: false
+- title: (880) 1617-475 212
+  url: tel:+8801617475212
+  icon: heroicons:phone-solid
+  icon_alt: faPhone
+  emphasize: false
+- title: extinctCoder
+  url: https://www.linkedin.com/in/extinctCoder
+  icon: devicon:linkedin
+  icon_alt: faLinkedin
+  emphasize: false
+- title: extinctCoder
+  url: https://github.com/extinctCoder
+  icon: devicon:github
+  icon_alt: faGithub
+  emphasize: true
+- title: fiery.snowflake
+  url: https://gitlab.com/fiery.snowflake
+  icon: devicon:gitlab
+  icon_alt: faGitlab
+  emphasize: false
+- title: write2shourov@gmail.com
+  url: mailto:write2shourov@gmail.com
+  icon: heroicons:envelope-solid
+  icon_alt: faEnvelope
+  emphasize: true
+- title: extinctCoder.github.io
+  url: https://extinctCoder.github.io
+  icon: heroicons:globe-alt
+  icon_alt: faGlobe
+  emphasize: false
 skills:
-  - title: "Programming Languages"
-    list:
-      - title: "Python"
-        confidence: 98
-        icon: "devicon:python"
-        emphasize: false
-      - title: "C Sharp"
-        confidence: 78
-        icon: "devicon:csharp"
-        emphasize: false
-      - title: "JavaScript (Js)"
-        confidence: 78
-        icon: "devicon:javascript"
-        emphasize: false
-      - title: "Rust"
-        confidence: 78
-        icon: "devicon:rust"
-        emphasize: false
-      - title: "Go"
-        confidence: 78
-        icon: "devicon:go"
-        emphasize: false
-      - title: "SQL"
-        confidence: 78
-        icon: "devicon:postgresql"
-        emphasize: false
-      - title: "Java"
-        confidence: 78
-        icon: "devicon:java"
-        emphasize: false
-      - title: "C++"
-        confidence: 78
-        icon: "devicon:cplusplus"
-        emphasize: false
-  - title: "Frameworks"
-    list:
-      - title: "Django"
-        icon: "devicon-plain:django"
-        emphasize: false
-      - title: "Flask"
-        icon: "devicon:flask"
-        emphasize: false
-      - title: "FastAPI"
-        icon: "devicon:fastapi"
-        emphasize: false
-      - title: "Vue JS"
-        icon: "devicon:vuejs"
-        emphasize: false
-  - title: "Tools"
-    list:
-      - title: "Docker"
-        icon: "devicon:docker"
-        emphasize: false
-      - title: "Kubernetes"
-        icon: "devicon:kubernetes"
-        emphasize: false
-      - title: "Ansible"
-        icon: "devicon:ansible"
-        emphasize: false
-      - title: "Terraform"
-        icon: "devicon:terraform"
-        emphasize: false
-  - title: "Platforms"
-    list:
-      - title: "AWS"
-        icon: "devicon-plain:aws"
-        emphasize: false
-      - title: "Azure"
-        icon: "devicon-plain:azure"
-        emphasize: false
+- title: Programming Languages
+  list:
+  - title: Python
+    confidence: 98
+    icon: devicon:python
+    emphasize: false
+  - title: C Sharp
+    confidence: 78
+    icon: devicon:csharp
+    emphasize: false
+  - title: JavaScript (Js)
+    confidence: 78
+    icon: devicon:javascript
+    emphasize: false
+  - title: Rust
+    confidence: 78
+    icon: devicon:rust
+    emphasize: false
+  - title: Go
+    confidence: 78
+    icon: devicon:go
+    emphasize: false
+  - title: SQL
+    confidence: 78
+    icon: devicon:postgresql
+    emphasize: false
+  - title: Java
+    confidence: 78
+    icon: devicon:java
+    emphasize: false
+  - title: C++
+    confidence: 78
+    icon: devicon:cplusplus
+    emphasize: false
+- title: Frameworks
+  list:
+  - title: Django
+    icon: devicon-plain:django
+    emphasize: false
+  - title: Flask
+    icon: devicon:flask
+    emphasize: false
+  - title: FastAPI
+    icon: devicon:fastapi
+    emphasize: false
+  - title: Vue JS
+    icon: devicon:vuejs
+    emphasize: false
+- title: Tools
+  list:
+  - title: Docker
+    icon: devicon:docker
+    emphasize: false
+  - title: Kubernetes
+    icon: devicon:kubernetes
+    emphasize: false
+  - title: Ansible
+    icon: devicon:ansible
+    emphasize: false
+  - title: Terraform
+    icon: devicon:terraform
+    emphasize: false
+- title: Platforms
+  list:
+  - title: AWS
+    icon: devicon-plain:aws
+    emphasize: false
+  - title: Azure
+    icon: devicon-plain:azure
+    emphasize: false
 pro_experience:
   enabled: true
   experiences:
-    - title: "TechnoBZ Ltd (KM Group)"
-      position: "Senior Software Engineer (Technical Project Lead)"
-      location: "Uttara Sector 5, Dhaka"
-      start_date: "March 2024"
-      end_date: ~
-      responsibilities:
-        - "Leading distinct Back-end, Front-end, UX, \\& App development teams with expertise in software development, software architecture database design, \\& Dev-Ops."
-    - title: "Young Genius Bangladesh Limited (YGBL)"
-      position: "Senior Software Engineer (Team Lead)"
-      location: "Dhaka, Bangladesh"
-      start_date: "March 2023"
-      end_date: "March 2024"
-      responsibilities:
-        - "Leading teams with expertise in back-end development, software architecture \\& database design, team management, Dev-Ops, \\& Robotics"
-    - title: "Integrated Software \\& Technologies Limited (ISTL)"
-      position: "Research \\& Development Engineer"
-      location: "Mirpur DOHS, Dhaka"
-      start_date: "July 2020"
-      end_date: "February 2023"
-      responsibilities:
-        - "Developed pioneering projects Assets Nexus \\& Data Citadel. Played Key role in major MIS projects \\& Govt. platforms, showcasing adaptability \\& holistic expertise"
-    - title: "Emerging IT Limited Bangladesh (EITBD)"
-      position: "Software Engineer"
-      location: "Banani DOHS, Dhaka"
-      start_date: "January 2019"
-      end_date: "June 2020"
-      responsibilities:
-        - "Specialized in ensuring top software quality prioritizing client satisfaction, \\& developing user-friendly products"
-    - title: "ACI Logistics Limited (SHAWPNO)"
-      position: "Developer"
-      location: "Tejgoan Industrial Area, Dhaka"
-      start_date: "June 2018"
-      end_date: "December 2018"
-      responsibilities:
-        - "Engaged in full-time software development, Specialized skills in emphasizing software quality, client satisfaction, \\& user-friendly products"
+  - title: TechnoBZ Ltd (KM Group)
+    position: Senior Software Engineer (Technical Project Lead)
+    location: Uttara Sector 5, Dhaka
+    start_date: March 2024
+    end_date: null
+    responsibilities:
+    - Leading distinct Back-end, Front-end, UX, \& App development teams with expertise
+      in software development, software architecture database design, \& Dev-Ops.
+  - title: Young Genius Bangladesh Limited (YGBL)
+    position: Senior Software Engineer (Team Lead)
+    location: Dhaka, Bangladesh
+    start_date: March 2023
+    end_date: March 2024
+    responsibilities:
+    - Leading teams with expertise in back-end development, software architecture
+      \& database design, team management, Dev-Ops, \& Robotics
+  - title: Integrated Software \& Technologies Limited (ISTL)
+    position: Research \& Development Engineer
+    location: Mirpur DOHS, Dhaka
+    start_date: July 2020
+    end_date: February 2023
+    responsibilities:
+    - Developed pioneering projects Assets Nexus \& Data Citadel. Played Key role
+      in major MIS projects \& Govt. platforms, showcasing adaptability \& holistic
+      expertise
+  - title: Emerging IT Limited Bangladesh (EITBD)
+    position: Software Engineer
+    location: Banani DOHS, Dhaka
+    start_date: January 2019
+    end_date: June 2020
+    responsibilities:
+    - Specialized in ensuring top software quality prioritizing client satisfaction,
+      \& developing user-friendly products
+  - title: ACI Logistics Limited (SHAWPNO)
+    position: Developer
+    location: Tejgoan Industrial Area, Dhaka
+    start_date: June 2018
+    end_date: December 2018
+    responsibilities:
+    - Engaged in full-time software development, Specialized skills in emphasizing
+      software quality, client satisfaction, \& user-friendly products
 project:
   enabled: true
   projects:
-    - title: "SHOB.COM.BD"
-      reference: "TecnoBZ"
-      url: "https://shob.com.bd"
-      technologies:
-        - "Flask"
-        - "React"
-        - "Flutter"
-        - "Git"
-        - "Docker"
-        - "Python"
-        - "Micro-Services"
-        - "AWS"
-      description:
-        - "B2B \\& B2C e-commerce platform connects businesses with other businesses \\& individual consumers, facilitating wholesale \\& retail transactions respectively, \\& streamlining procurement \\& sales processes"
-    - title: "Study Giveway"
-      reference: "YGBL"
-      url: ~
-      technologies:
-        - "Django"
-        - "Git"
-        - "Docker"
-        - "Python"
-      description:
-        - "An integrated platform for managing student applications, scholarships, \\& interactions among admin, students, institutes, \\& agencies"
-    - title: "Data Citadel"
-      reference: "ISTL"
-      url: ~
-      technologies:
-        - "Git"
-        - "Linux"
-        - "Bash"
-        - "Micro-services"
-        - "MQTT"
-        - "Python"
-      description:
-        - "Software solution for fortifying corporate data. Features include removable drive protection, lock-down capabilities, advanced monitoring, enabled real-time incident response, \\& secure synchronization"
-    - title: "Assets Nexus"
-      reference: "ISTL"
-      url: ~
-      technologies:
-        - "Linux Server"
-        - "MySQL"
-        - "Docker"
-        - "Django"
-        - "Python"
-      description:
-        - "Designed \\& Implemented sass platform for requisition \\& stock management, robust security, seamless integration with HRM, LDAP, O-Auth, boosting efficiency by 20\\%, reducing asset costs 15 \\%"
-    - title: "Dev-Ops"
-      reference: "ISTL"
-      url: ~
-      technologies:
-        - "Linux Server"
-        - "MySQL"
-        - "Docker"
-        - "Django"
-        - "Python"
-      description:
-        - "Led key MIS projects at Integrated Software, including SPFMSP MIS, EU RLFECT MIS, \\& Bangladesh RCMS AFIS. Contributions spanned planning, design, \\& development, along with DevOps practices"
+  - title: SHOB.COM.BD
+    reference: TecnoBZ
+    url: https://shob.com.bd
+    technologies:
+    - Flask
+    - React
+    - Flutter
+    - Git
+    - Docker
+    - Python
+    - Micro-Services
+    - AWS
+    description:
+    - B2B \& B2C e-commerce platform connects businesses with other businesses \&
+      individual consumers, facilitating wholesale \& retail transactions respectively,
+      \& streamlining procurement \& sales processes
+  - title: Study Giveway
+    reference: YGBL
+    url: null
+    technologies:
+    - Django
+    - Git
+    - Docker
+    - Python
+    description:
+    - An integrated platform for managing student applications, scholarships, \& interactions
+      among admin, students, institutes, \& agencies
+  - title: Data Citadel
+    reference: ISTL
+    url: null
+    technologies:
+    - Git
+    - Linux
+    - Bash
+    - Micro-services
+    - MQTT
+    - Python
+    description:
+    - Software solution for fortifying corporate data. Features include removable
+      drive protection, lock-down capabilities, advanced monitoring, enabled real-time
+      incident response, \& secure synchronization
+  - title: Assets Nexus
+    reference: ISTL
+    url: null
+    technologies:
+    - Linux Server
+    - MySQL
+    - Docker
+    - Django
+    - Python
+    description:
+    - Designed \& Implemented sass platform for requisition \& stock management, robust
+      security, seamless integration with HRM, LDAP, O-Auth, boosting efficiency by
+      20\%, reducing asset costs 15 \%
+  - title: Dev-Ops
+    reference: ISTL
+    url: null
+    technologies:
+    - Linux Server
+    - MySQL
+    - Docker
+    - Django
+    - Python
+    description:
+    - Led key MIS projects at Integrated Software, including SPFMSP MIS, EU RLFECT
+      MIS, \& Bangladesh RCMS AFIS. Contributions spanned planning, design, \& development,
+      along with DevOps practices
 education:
   enabled: true
   institutes:
-    - title: "American International University - Bangladesh (AIUB)"
-      degree:
-        - "Bachelor of Science in Computer Science (BSc in CSE)"
-      location: "Dhaka, Bangladesh"
-      start_date: 2014
-      end_date: 2018
-      description:
-        - title: "ARC–2017 (MARS Society Nasa, Utah - USA)"
-          content: "Participated \\& ranked 1st from Bangladesh in URC - 2017"
-        - title: "AIUB CS Fest - 2016"
-          content: "Ranked Champion in Desktop App Showcasing of the contest"
-        - title: "Physical 3D Screen"
-          content: "Build demonstration unit of real 3d Screen as part of Thesis \\& project of final year courses"
-    - title: "Saidpur Govt’ Science High School \\& College (SGSC)"
-      degree:
-        - "Secondary School Certificate (SSC)"
-        - "Higher Secondary School Certificate (HSC)"
-      location: "Nilphamary, Bangladesh"
-      start_date: 2006
-      end_date: 2013
-      description: ~
+  - title: American International University - Bangladesh (AIUB)
+    degree:
+    - Bachelor of Science in Computer Science (BSc in CSE)
+    location: Dhaka, Bangladesh
+    start_date: 2014
+    end_date: 2018
+    description:
+    - title: ARC–2017 (MARS Society Nasa, Utah - USA)
+      content: Participated \& ranked 1st from Bangladesh in URC - 2017
+    - title: AIUB CS Fest - 2016
+      content: Ranked Champion in Desktop App Showcasing of the contest
+    - title: Physical 3D Screen
+      content: Build demonstration unit of real 3d Screen as part of Thesis \& project
+        of final year courses
+  - title: Saidpur Govt’ Science High School \& College (SGSC)
+    degree:
+    - Secondary School Certificate (SSC)
+    - Higher Secondary School Certificate (HSC)
+    location: Nilphamary, Bangladesh
+    start_date: 2006
+    end_date: 2013
+    description: null

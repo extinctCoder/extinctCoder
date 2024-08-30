@@ -1,0 +1,14 @@
+\BLOCK{if project.enabled}
+\section{Projects}
+\resumeSubHeadingListStart
+\BLOCK{for project in project.projects}
+\resumeProjectHeading
+{\textbf{\BLOCK{if project.url}\href{\VAR{project.url}}{\seticon{faLink} \VAR{project.title}}\BLOCK{else}\VAR{project.title}\BLOCK{endif}} $|$ \emph{\BLOCK{for technology in project.technologies}\VAR{technology}, \BLOCK{if loop.last} etc.\BLOCK{endif}\BLOCK{endfor}}}{\VAR{project.reference}}
+\resumeItemListStart
+\BLOCK{for item in project.description}
+\resumeItem{\VAR{item}}
+\BLOCK{endfor}
+\resumeItemListEnd
+\BLOCK{endfor}
+\resumeSubHeadingListEnd
+\BLOCK{endif}
