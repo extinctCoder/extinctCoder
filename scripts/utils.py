@@ -19,8 +19,7 @@ def read_sha(resume_path: Path):
 
 def update_sha(resume_data: dict, sha: str, resume_path: Path) -> None:
     logger.debug("Generating SHA for resume.yml")
-    # TODO: PLEASE uncomment the below line when you are ready to update the resume
-    # resume_data["sha"] = sha
+    resume_data["sha"] = sha
     logger.debug(f"Storing latest SHA {sha} in {resume_path}")
     with resume_path.open("w", encoding="utf-8") as file:
         dump(
