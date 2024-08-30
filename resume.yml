@@ -1,6 +1,6 @@
 sha: 9f1c2e6
 name: Sabbir Ahmed Shourov
-bio: Back-end, API, Dev Ops Specialist | Robotics \& AI Enthusiast 🚀💻🤖
+bio: Back-end, API, Dev Ops Specialist | Robotics and AI Enthusiast 🚀💻🤖
 links:
 - title: (880) 1617-475 212
   url: tel:+8801617475212
@@ -112,8 +112,8 @@ pro_experience:
     start_date: March 2024
     end_date: null
     responsibilities:
-    - Leading distinct Back-end, Front-end, UX, \& App development teams with expertise
-      in software development, software architecture database design, \& Dev-Ops.
+    - Leading distinct Back-end, Front-end, UX, and App development teams with expertise
+      in software development, software architecture database design, and Dev-Ops.
   - title: Young Genius Bangladesh Limited (YGBL)
     position: Senior Software Engineer (Team Lead)
     location: Dhaka, Bangladesh
@@ -121,15 +121,15 @@ pro_experience:
     end_date: March 2024
     responsibilities:
     - Leading teams with expertise in back-end development, software architecture
-      \& database design, team management, Dev-Ops, \& Robotics
-  - title: Integrated Software \& Technologies Limited (ISTL)
-    position: Research \& Development Engineer
+      and database design, team management, Dev-Ops, and Robotics
+  - title: Integrated Software and Technologies Limited (ISTL)
+    position: Research and Development Engineer
     location: Mirpur DOHS, Dhaka
     start_date: July 2020
     end_date: February 2023
     responsibilities:
-    - Developed pioneering projects Assets Nexus \& Data Citadel. Played Key role
-      in major MIS projects \& Govt. platforms, showcasing adaptability \& holistic
+    - Developed pioneering projects Assets Nexus and Data Citadel. Played Key role
+      in major MIS projects and Govt. platforms, showcasing adaptability and holistic
       expertise
   - title: Emerging IT Limited Bangladesh (EITBD)
     position: Software Engineer
@@ -138,7 +138,7 @@ pro_experience:
     end_date: June 2020
     responsibilities:
     - Specialized in ensuring top software quality prioritizing client satisfaction,
-      \& developing user-friendly products
+      and developing user-friendly products
   - title: ACI Logistics Limited (SHAWPNO)
     position: Developer
     location: Tejgoan Industrial Area, Dhaka
@@ -146,7 +146,7 @@ pro_experience:
     end_date: December 2018
     responsibilities:
     - Engaged in full-time software development, Specialized skills in emphasizing
-      software quality, client satisfaction, \& user-friendly products
+      software quality, client satisfaction, and user-friendly products
 project:
   enabled: true
   projects:
@@ -163,9 +163,9 @@ project:
     - Micro-Services
     - AWS
     description:
-    - B2B \& B2C e-commerce platform connects businesses with other businesses \&
-      individual consumers, facilitating wholesale \& retail transactions respectively,
-      \& streamlining procurement \& sales processes
+    - B2B and B2C e-commerce platform connects businesses with other businesses and
+      individual consumers, facilitating wholesale and retail transactions respectively,
+      and streamlining procurement and sales processes
   - title: Study Giveway
     reference: YGBL
     url: null
@@ -175,8 +175,8 @@ project:
     - Docker
     - Python
     description:
-    - An integrated platform for managing student applications, scholarships, \& interactions
-      among admin, students, institutes, \& agencies
+    - An integrated platform for managing student applications, scholarships, and
+      interactions among admin, students, institutes, and agencies
   - title: Data Citadel
     reference: ISTL
     url: null
@@ -190,7 +190,7 @@ project:
     description:
     - Software solution for fortifying corporate data. Features include removable
       drive protection, lock-down capabilities, advanced monitoring, enabled real-time
-      incident response, \& secure synchronization
+      incident response, and secure synchronization
   - title: Assets Nexus
     reference: ISTL
     url: null
@@ -201,9 +201,9 @@ project:
     - Django
     - Python
     description:
-    - Designed \& Implemented sass platform for requisition \& stock management, robust
-      security, seamless integration with HRM, LDAP, O-Auth, boosting efficiency by
-      20\%, reducing asset costs 15 \%
+    - Designed and Implemented sass platform for requisition and stock management,
+      robust security, seamless integration with HRM, LDAP, O-Auth, boosting efficiency
+      by 20percent, reducing asset costs 15 percent
   - title: Dev-Ops
     reference: ISTL
     url: null
@@ -215,7 +215,7 @@ project:
     - Python
     description:
     - Led key MIS projects at Integrated Software, including SPFMSP MIS, EU RLFECT
-      MIS, \& Bangladesh RCMS AFIS. Contributions spanned planning, design, \& development,
+      MIS, and Bangladesh RCMS AFIS. Contributions spanned planning, design, and development,
       along with DevOps practices
 education:
   enabled: true
@@ -228,13 +228,13 @@ education:
     end_date: 2018
     description:
     - title: ARC–2017 (MARS Society Nasa, Utah - USA)
-      content: Participated \& ranked 1st from Bangladesh in URC - 2017
+      content: Participated and ranked 1st from Bangladesh in URC - 2017
     - title: AIUB CS Fest - 2016
       content: Ranked Champion in Desktop App Showcasing of the contest
     - title: Physical 3D Screen
-      content: Build demonstration unit of real 3d Screen as part of Thesis \& project
+      content: Build demonstration unit of real 3d Screen as part of Thesis and project
         of final year courses
-  - title: Saidpur Govt’ Science High School \& College (SGSC)
+  - title: Saidpur Govt’ Science High School and College (SGSC)
     degree:
     - Secondary School Certificate (SSC)
     - Higher Secondary School Certificate (HSC)

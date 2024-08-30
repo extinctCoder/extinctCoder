@@ -1,1 +1,7 @@
 Pipfile.lock
+**.aux
+**.log
+**.fls
+**.fdb_latexmk
+**.out
+**.synctex.gz
