@@ -20,19 +20,21 @@ jobs:
         with:
           path: |
             /usr/share/texlive
+            /usr/local/texlive
             /usr/share/fonts/truetype/firacode
+            /usr/bin/tex
+            /usr/bin/pdflatex
+            /usr/bin/xelatex
           key: latex_firacode_cache
           restore-keys: latex_firacode_cache
 
       - name: Prepare Latex build Environment
         id: latex-environment
-        run: pdflatex --version
-
-        # run: |
-        #   if ! tex --version > /dev/null 2>&1 || [ ! -d "/usr/share/fonts/truetype/firacode" ]; then
-        #     sudo apt-get update
-        #     sudo apt-get install -y texlive-full fonts-firacode
-        #   fi
+        run: |
+          if ! pdflatex --version > /dev/null 2>&1 || [ ! -d "/usr/share/fonts/truetype/firacode" ]; then
+            sudo apt-get update
+            sudo apt-get install -y texlive-full fonts-firacode
+          fi
 
       - name: Compile LaTeX Document
         id: compile-latex
