@@ -38,6 +38,7 @@ jobs:
 
   CompileUploadLatex:
     runs-on: ubuntu-latest
+    needs: BuildLatexTemplate
     steps:
       - name: Checkout Repository for Latest Changes
         id: code-checkout
