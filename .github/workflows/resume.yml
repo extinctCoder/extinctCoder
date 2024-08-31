@@ -21,7 +21,7 @@ jobs:
       - name: Install pipenv
         id: install-pipenv
         run: |
-          curl https://raw.githubusercontent.com/pypa/pipenv/master/get-pipenv.py | python
+          pip install --upgrade --force-reinstall pip && pip install pipenv
       - name: Install python Dependencies
         id: install-dependencies
         run: |
