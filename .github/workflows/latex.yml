@@ -14,21 +14,26 @@ jobs:
 
     steps:
       - name: Checkout Repository for Latest Changes
+        id: code-checkout
         uses: actions/checkout@v4
 
       - name: Prepare Latex build Environment
+        id: latex-environment
         run: |
           sudo apt-get update
           sudo apt-get install -y texlive-full
+          sudo apt-get install -y fonts-firacode
 
       - name: Compile LaTeX Document
+        id: compile-latex
         run: |
           cd latex
           pdflatex -interaction=nonstopmode -jobname=Sabbir_Ahmed_Shourov_resume resume.tex
           cp Sabbir_Ahmed_Shourov_resume.pdf ../Sabbir_Ahmed_Shourov_resume.pdf
           cd ..
 
-      - name: Upload Resume
+      - name: Upload Resume to GitHub
+        id: upload-resume
         uses: EndBug/add-and-commit@v9
         with:
           default_author: github_actor
