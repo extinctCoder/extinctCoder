@@ -10,18 +10,20 @@ logger = log_arbiter(__name__)
 
 def read_sha(resume_path: Path):
     """
-    Try to read the latest git commit hash (SHA) that affected the given resume file.
+    Gets the latest commit SHA of the given file in the local repository.
 
     Args:
-        resume_path (Path): The path to the resume file.
+        resume_path (Path): The path to the resume.yml file.
 
     Returns:
-        str: The latest SHA that affected the given resume file, or None if the file is not in a git repository.
+        str: The latest commit SHA of the file.
     """
     try:
         repo = Repo(resume_path.parent, search_parent_directories=True)
         relative_path = resume_path.relative_to(repo.working_tree_dir)
-        return repo.git.log("-n", "1", "--pretty=format:%h", "--", str(relative_path))
+        return repo.git.log(
+            "-n", "1", "--skip", "1", "--pretty=format:%h", "--", str(relative_path)
+        )
     except Exception as ex:
         logger.error(ex)
 
