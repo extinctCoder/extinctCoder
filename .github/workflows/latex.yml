@@ -30,7 +30,7 @@ jobs:
           cd latex
           pdflatex -interaction=nonstopmode -jobname=Sabbir_Ahmed_Shourov_resume resume.tex
           cp Sabbir_Ahmed_Shourov_resume.pdf ../Sabbir_Ahmed_Shourov_resume.pdf
-          cd ..
+          rm Sabbir_Ahmed_Shourov_resume.pdf && cd ..
 
       - name: Upload Resume to GitHub
         id: upload-resume
