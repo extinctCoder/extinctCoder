@@ -14,29 +14,22 @@ jobs:
         id: code-checkout
         uses: actions/checkout@v4
 
-        # - name: Cache LaTeX and Fira Code Installation
-        #   id: cache-environment
-        #   uses: actions/cache@v4
-        #   with:
-        #     path: /usr/share/texlive
-        #     key: latex-texlive-$(date +'%Y-%m-%d')
+      - name: Cache LaTeX and Fira Code Installation
+        id: cache-environment
+        uses: actions/cache@v4
+        with:
+          path: |
+            /usr/share/texlive
+            /usr/share/fonts/truetype/firacode
+          key: latex-texlive-$(date +'%Y-%m-%d')
 
       - name: Prepare Latex build Environment
         id: latex-environment
         run: |
-          sudo apt-get update
-          sudo apt-get install -y texlive-full
-          sudo apt-get install -y fonts-firacode
-
-      - name: Determine LaTeX and Fira Code Paths
-        id: determine-paths
-        run: |
-          LATEX_PATH=$(whereis texlive | cut -d ' ' -f 2)
-          FIRA_CODE_PATH=$(fc-list | grep -i "fira" | head -n 1 | cut -d ':' -f 1 | xargs dirname)
-          echo "LATEX_PATH=$LATEX_PATH" >> $GITHUB_ENV
-          echo "FIRA_CODE_PATH=$FIRA_CODE_PATH" >> $GITHUB_ENV
-          echo $LATEX_PATH
-          echo $FIRA_CODE_PATH
+          if ! tex --version > /dev/null 2>&1 || [ ! -d "/usr/share/fonts/truetype/firacode" ]; then
+            sudo apt-get update
+            sudo apt-get install -y texlive-full fonts-firacode
+          fi
 
       - name: Compile LaTeX Document
         id: compile-latex
