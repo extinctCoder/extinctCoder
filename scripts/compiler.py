@@ -24,6 +24,16 @@ LATEX_COMPILER = Environment(
 
 
 def compile_latex(resume_data: dict, template_dir: str, output_dir: str) -> None:
+    """
+    Compile latex templates into tex files.
+
+    This function takes a directory of latex templates and a dictionary of data, and generates tex files from the templates and data. The generated files are placed in the specified output directory, which is created if it does not exist.
+
+    Args:
+        resume_data: A dictionary of data to use when rendering the templates.
+        template_dir: A string path to the directory containing the latex templates.
+        output_dir: A string path to the directory where the generated tex files should be placed.
+    """
     try:
         output_dir = Path(output_dir)
         output_dir.mkdir(parents=True, exist_ok=True)
