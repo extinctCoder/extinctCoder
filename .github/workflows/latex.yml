@@ -3,7 +3,7 @@ name: Generate Latex RESUME from source Code
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 2 * * *"
 
 jobs:
   CompileUploadLatex:
@@ -21,7 +21,7 @@ jobs:
           path: |
             /usr/share/texlive
             /usr/share/fonts/truetype/firacode
-          key: latex-texlive-$(date +'%Y-%m-%d')
+          key: latex_firacode_cache
 
       - name: Prepare Latex build Environment
         id: latex-environment
