@@ -6,7 +6,7 @@ on:
     - cron: "0 0 * * *"
 
 jobs:
-  compile:
+  CompileUploadLatex:
     runs-on: ubuntu-latest
 
     steps:
