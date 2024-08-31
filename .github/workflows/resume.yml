@@ -56,6 +56,10 @@ jobs:
           rm Sabbir_Ahmed_Shourov_resume.pdf && cd latex
           cp Sabbir_Ahmed_Shourov_resume.pdf ../Sabbir_Ahmed_Shourov_resume.pdf
           rm Sabbir_Ahmed_Shourov_resume.pdf && cd ..
+      - name: Pull latest changes
+        id: git-pull
+        run: |
+          git pull origin master
       - name: Upload Resume to GitHub
         id: upload-resume
         uses: EndBug/add-and-commit@v9
