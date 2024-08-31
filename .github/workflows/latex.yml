@@ -14,33 +14,18 @@ jobs:
         id: code-checkout
         uses: actions/checkout@v4
 
-      - name: Cache LaTeX and Fira Code Installation
-        id: cache-environment
-        uses: actions/cache@v4
-        with:
-          path: |
-            /usr/share/texlive
-            /usr/local/texlive
-            /usr/share/fonts/truetype/firacode
-            /usr/bin/tex
-            /usr/bin/pdflatex
-            /usr/bin/xelatex
-          key: latex_firacode_cache
-          restore-keys: latex_firacode_cache
-
-      - name: Prepare Latex build Environment
-        id: latex-environment
-        run: |
-          if ! pdflatex --version > /dev/null 2>&1 || [ ! -d "/usr/share/fonts/truetype/firacode" ]; then
-            sudo apt-get update
-            sudo apt-get install -y texlive-full fonts-firacode
-          fi
-
       - name: Compile LaTeX Document
         id: compile-latex
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: resume.tex
+          working_directory: latex/
+          args: -jobname=Sabbir_Ahmed_Shourov_resume
+
+      - name: Post Compile Housekeeping
+        id: housekeeping
         run: |
-          cd latex
-          pdflatex -interaction=nonstopmode -jobname=Sabbir_Ahmed_Shourov_resume resume.tex
+          rm Sabbir_Ahmed_Shourov_resume.pdf && cd latex
           cp Sabbir_Ahmed_Shourov_resume.pdf ../Sabbir_Ahmed_Shourov_resume.pdf
           rm Sabbir_Ahmed_Shourov_resume.pdf && cd ..
 
