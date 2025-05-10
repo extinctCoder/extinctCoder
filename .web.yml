@@ -1,3 +1,4 @@
 enabled: true
-status: hidden
+resume_repo: true
+resume_file: "resume.yml"
 cover: https://raw.githubusercontent.com/extinctCoder/c4-uml/main/cover.jpg
