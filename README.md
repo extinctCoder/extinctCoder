@@ -99,8 +99,8 @@ i am working on it
 new section
 ### :zap: Recent Activity
 <!--START_SECTION:activity-->
-1. 🚀 Published release [v0.3.2](https://github.com/extinctCoder/fast_api/releases/tag/v0.3.2) in [extinctCoder/fast_api](https://github.com/extinctCoder/fast_api)
-2. 🚀 Published release [v0.2.1](https://github.com/extinctCoder/fast_api/releases/tag/v0.2.1) in [extinctCoder/fast_api](https://github.com/extinctCoder/fast_api)
+1. 🎉 Merged PR [#1](https://github.com/extinctCoder/smart_grid/pull/1) in [extinctCoder/smart_grid](https://github.com/extinctCoder/smart_grid)
+2. 💪 Opened PR [#1](https://github.com/extinctCoder/smart_grid/pull/1) in [extinctCoder/smart_grid](https://github.com/extinctCoder/smart_grid)
 3. 🚀 Published release [v0.0.10](https://github.com/extinctCoder/fast_api/releases/tag/v0.0.10) in [extinctCoder/fast_api](https://github.com/extinctCoder/fast_api)
 4. 🚀 Published release [0.0.9](https://github.com/extinctCoder/fast_api/releases/tag/0.0.9) in [extinctCoder/fast_api](https://github.com/extinctCoder/fast_api)
 5. ❗ Opened issue [#2310](https://github.com/JessicaLim8/JessicaLim8/issues/2310) in [JessicaLim8/JessicaLim8](https://github.com/JessicaLim8/JessicaLim8)
