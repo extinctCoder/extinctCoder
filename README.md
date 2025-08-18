@@ -99,9 +99,9 @@ i am working on it
 new section
 ### :zap: Recent Activity
 <!--START_SECTION:activity-->
-1. 🎉 Merged PR [#4](https://github.com/extinctCoder/smart_grid/pull/4) in [extinctCoder/smart_grid](https://github.com/extinctCoder/smart_grid)
-2. 💪 Opened PR [#4](https://github.com/extinctCoder/smart_grid/pull/4) in [extinctCoder/smart_grid](https://github.com/extinctCoder/smart_grid)
-3. 🎉 Merged PR [#3](https://github.com/extinctCoder/smart_grid/pull/3) in [extinctCoder/smart_grid](https://github.com/extinctCoder/smart_grid)
-4. 💪 Opened PR [#3](https://github.com/extinctCoder/smart_grid/pull/3) in [extinctCoder/smart_grid](https://github.com/extinctCoder/smart_grid)
-5. 🎉 Merged PR [#2](https://github.com/extinctCoder/smart_grid/pull/2) in [extinctCoder/smart_grid](https://github.com/extinctCoder/smart_grid)
+1. 🎉 Merged PR [#8](https://github.com/extinctCoder/smart_grid/pull/8) in [extinctCoder/smart_grid](https://github.com/extinctCoder/smart_grid)
+2. 💪 Opened PR [#8](https://github.com/extinctCoder/smart_grid/pull/8) in [extinctCoder/smart_grid](https://github.com/extinctCoder/smart_grid)
+3. 🎉 Merged PR [#7](https://github.com/extinctCoder/smart_grid/pull/7) in [extinctCoder/smart_grid](https://github.com/extinctCoder/smart_grid)
+4. 💪 Opened PR [#7](https://github.com/extinctCoder/smart_grid/pull/7) in [extinctCoder/smart_grid](https://github.com/extinctCoder/smart_grid)
+5. 🎉 Merged PR [#5](https://github.com/extinctCoder/smart_grid/pull/5) in [extinctCoder/smart_grid](https://github.com/extinctCoder/smart_grid)
 <!--END_SECTION:activity-->
