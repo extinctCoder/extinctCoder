@@ -2,41 +2,42 @@ sha: ''
 name: Sabbir Ahmed Shourov
 bio: Back-end, API, Dev Ops Specialist | Robotics and AI Enthusiast 🚀💻🤖
 avatar: https://avatars.githubusercontent.com/u/16348041?v=4
+resume_pdf: https://github.com/extinctCoder/extinctCoder/blob/master/Sabbir_Ahmed_Shourov_resume.pdf
 links:
 - title: (880) 1617-475 212
   tooltip: Phone
   url: tel:+8801617475212
-  icon: jam--phone
+  icon: jam:phone
   icon_alt: faPhone
   emphasize: false
 - title: extinctCoder
   tooltip: LinkedIn
   url: https://www.linkedin.com/in/extinctCoder
-  icon: jam--linkedin
+  icon: jam:linkedin
   icon_alt: faLinkedin
   emphasize: false
 - title: extinctCoder
   tooltip: GitHub
   url: https://github.com/extinctCoder
-  icon: jam--github
+  icon: jam:github
   icon_alt: faGithub
   emphasize: true
 - title: fiery.snowflake
   tooltip: GitLab
   url: https://gitlab.com/fiery.snowflake
-  icon: jam--gitlab
+  icon: jam:gitlab
   icon_alt: faGitlab
   emphasize: false
 - title: write2shourov@gmail.com
   tooltip: Email
   url: mailto:write2shourov@gmail.com
-  icon: jam--envelope
+  icon: jam:envelope
   icon_alt: faEnvelope
   emphasize: true
 - title: extinctCoder.github.io
   tooltip: Website
   url: https://extinctCoder.github.io
-  icon: heroicons--globe-alt
+  icon: heroicons:globe-alt
   icon_alt: faGlobe
   emphasize: false
 skills:
