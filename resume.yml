@@ -1,4 +1,4 @@
-sha: ''
+asha: ''
 name: Sabbir Ahmed Shourov
 bio: Back-end, API, Dev Ops Specialist | Robotics and AI Enthusiast 🚀💻🤖
 avatar: https://avatars.githubusercontent.com/u/16348041?v=4
@@ -106,7 +106,7 @@ skills:
 - title: Platforms
   list:
   - title: AWS
-    icon: devicon-plain:aws
+    icon: vscode-icons:file-type-aws
     emphasize: false
   - title: Azure
     icon: devicon-plain:azure
