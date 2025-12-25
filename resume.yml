@@ -45,35 +45,35 @@ skills:
   list:
   - title: Python
     confidence: 98
-    icon: devicon--python
+    icon: devicon:python
     emphasize: false
   - title: C Sharp
     confidence: 80
-    icon: devicon--csharp
+    icon: devicon:csharp
     emphasize: false
   - title: JavaScript (Js)
     confidence: 60
-    icon: devicon--javascript
+    icon: devicon:javascript
     emphasize: false
   - title: Rust
     confidence: 20
-    icon: devicon--rust
+    icon: devicon:rust
     emphasize: false
   - title: Go
     confidence: 20
-    icon: devicon--go
+    icon: devicon:go
     emphasize: false
   - title: SQL
     confidence: 70
-    icon: devicon--postgresql
+    icon: devicon:postgresql
     emphasize: false
   - title: Java
     confidence: 70
-    icon: devicon--java
+    icon: devicon:java
     emphasize: false
   - title: C++
     confidence: 80
-    icon: devicon--cplusplus
+    icon: devicon:cplusplus
     emphasize: false
 - title: Frameworks
   list:
