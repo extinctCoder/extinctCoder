@@ -33,7 +33,7 @@ When editing the Jinja2 environment, template delimiters, or which `\input{}` fi
 
 ## Commands
 
-Dependencies: plain `pip` + `requirements.txt` (Python 3.12). No test suite, lint config, or build script beyond the steps below.
+Dependencies: plain `pip` + `requirements.txt` (runtime) and `requirements-dev.txt` (adds `pytest` + `jsonschema`); Python 3.13. A `Makefile` wraps the common tasks (`make venv` / `build` / `readme` / `test`).
 
 ```bash
 # Set up environment
@@ -45,6 +45,9 @@ python -m resume.builder
 
 # Update the README projects list from resume.yml (featured: true)
 python -m readme
+
+# Run the test suite (needs requirements-dev.txt)
+pytest -q
 
 # Override builder default paths if needed
 python -m resume.builder --resume resume.yml --template resume/templates --output resume/output
@@ -60,5 +63,8 @@ GitHub Actions in `.github/workflows/`:
 - **`resume_builder.yml`** — push to `resume.yml` / `resume/**` / `requirements.txt` / the workflow, plus manual dispatch (no cron). Three staged jobs passing files via artifacts: **render** (`python -m resume.builder` → uploads `.tex`) → **compile** (`xu-cheng/latex-action` → PDF) → **publish** (downloads the PDF, commits it).
 - **`readme_projects.yml`** — push to `resume.yml` / `readme/**` / the workflow, plus manual dispatch. Runs `python -m readme` and commits the refreshed `README.md`.
 - **`latest_blogs.yml`** — scheduled; pulls latest posts from the blog feed (`extinctcoder.github.io/feed.xml`) into `README.md`'s `<!-- BLOG-POST-LIST -->` markers.
+- **`tests.yml`** — push to code / `resume.yml` / `tests/`; installs `requirements-dev.txt` and runs `pytest` (unit tests for the builder + readme, plus schema validation of `resume.yml`).
+
+Dependency hygiene is automated via `.github/dependabot.yml`, which opens weekly PRs to keep GitHub Actions and pip dependencies current.
 
 `resume_builder.yml` and `readme_projects.yml` share a `concurrency: repo-writes` group, so editing `resume.yml` (which triggers both) runs them one-at-a-time instead of racing on `git push`. The PDF is only built in CI — there is no local LaTeX engine.
