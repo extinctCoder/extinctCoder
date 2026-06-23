@@ -5,7 +5,6 @@ from yaml import safe_load
 
 from .compiler import compile_latex
 from .logger import log_arbiter
-from .sha import read_sha, update_sha
 
 logger = log_arbiter(__name__)
 
@@ -33,30 +32,18 @@ PROJECT_DIR = Path(__file__).resolve().parent.parent
     help="LaTeX OUTPUT directory",
 )
 def main(resume: str, template: str, output: str):
-    try:
-        resume_path = Path(resume).resolve()
-        if not resume_path.is_file():
-            raise Exception(f"RESUME FILE not found at {resume}")
-        with open(resume_path, "r", encoding="utf-8") as file:
-            resume_data = safe_load(file)
-            logger.debug(f"resume data loaded from {resume}")
-        sha = read_sha(resume_path)
-        if not resume_data.get("sha") or resume_data["sha"] != sha:
-            logger.info("RESUME IS OUT-OF-DATE or FIRST RUN")
-            update_sha(resume_data=resume_data, sha=sha, resume_path=resume_path)
-            logger.debug("Starting LaTeX compiler to compile resume")
-            compile_latex(
-                resume_data=resume_data, template_dir=template, output_dir=output
-            )
-            logger.info("RESUME COMPILED SUCCESSFULLY")
-            return
-        logger.info("RESUME IS UP-TO-DATE")
-    except Exception as ex:
-        logger.error(ex)
-    finally:
-        logger.debug("Shutting down resume builder")
+    """Render the LaTeX templates from resume.yml. Builds every run."""
+    resume_path = Path(resume).resolve()
+    if not resume_path.is_file():
+        raise SystemExit(f"resume file not found: {resume}")
+
+    with open(resume_path, "r", encoding="utf-8") as file:
+        resume_data = safe_load(file)
+    logger.info(f"Loaded resume data from {resume_path}")
+
+    compile_latex(resume_data=resume_data, template_dir=template, output_dir=output)
+    logger.info(f"Done — rendered LaTeX into {output}")
 
 
 if __name__ == "__main__":
-    logger.info("Starting resume generator...")
     main()

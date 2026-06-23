@@ -1,0 +1,147 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/extinctCoder/extinctCoder/master/resume/resume.schema.json",
+  "title": "Résumé data (resume.yml)",
+  "description": "Schema for the data consumed by the LaTeX résumé builder (resume/builder). Only fields actually rendered by the templates are allowed.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "links", "skills", "pro_experience", "project", "education"],
+  "properties": {
+    "name": { "type": "string", "minLength": 1 },
+    "links": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/link" }
+    },
+    "skills": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/skillGroup" }
+    },
+    "pro_experience": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled", "experiences"],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "experiences": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/experience" }
+        }
+      }
+    },
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled", "projects"],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "projects": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/project" }
+        }
+      }
+    },
+    "education": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled", "institutes"],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "institutes": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/institute" }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "link": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "url", "icon_alt", "emphasize"],
+      "properties": {
+        "title": { "type": "string" },
+        "url": { "type": "string" },
+        "icon_alt": { "type": "string", "description": "fontawesome5 macro name, e.g. faGithub" },
+        "emphasize": { "type": "boolean" }
+      }
+    },
+    "skillGroup": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "list"],
+      "properties": {
+        "title": { "type": "string" },
+        "list": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["title"],
+            "properties": { "title": { "type": "string" } }
+          }
+        }
+      }
+    },
+    "experience": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "position", "location", "start_date", "end_date", "responsibilities"],
+      "properties": {
+        "title": { "type": "string" },
+        "position": { "type": "string" },
+        "location": { "type": "string" },
+        "start_date": { "type": ["string", "integer"] },
+        "end_date": { "type": ["string", "integer", "null"] },
+        "responsibilities": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "reference", "url", "technologies", "description"],
+      "properties": {
+        "title": { "type": "string" },
+        "reference": { "type": "string" },
+        "url": { "type": ["string", "null"] },
+        "technologies": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "description": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "institute": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "degree", "location", "start_date", "end_date", "description"],
+      "properties": {
+        "title": { "type": "string" },
+        "degree": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "location": { "type": "string" },
+        "start_date": { "type": ["string", "integer"] },
+        "end_date": { "type": ["string", "integer"] },
+        "description": {
+          "type": ["array", "null"],
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["title", "content"],
+            "properties": {
+              "title": { "type": "string" },
+              "content": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

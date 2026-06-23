@@ -1,19 +1,22 @@
-name: Latest blog post workflow
+name: Latest Blog Posts
+
 on:
-  schedule: # Run workflow automatically
-    - cron: "0 0 * * *" # Runs once a day at 00:00 UTC
-  workflow_dispatch: # Run workflow manually (without waiting for the cron to be called), through the GitHub Actions Workflow page directly
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+
 permissions:
-  contents: write # To write the generated contents to the readme
+  contents: write
 
 jobs:
-  update-readme-with-blog:
-    name: Update this repo's README with latest blog posts
+  sync-blog-posts:
+    name: Sync latest blog posts
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Check out repository
         uses: actions/checkout@v4
-      - name: Pull in dev.to posts
+
+      - name: Update README with latest posts
         uses: gautamkrishnar/blog-post-workflow@v1
         with:
           feed_list: "https://extinctcoder.github.io/feed.xml"

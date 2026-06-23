@@ -22,14 +22,9 @@ Everything for the résumé builder lives under `resume/`. Data flow: `resume/re
 - **`resume/resume.yml`** is the only file a human edits to change résumé content (links, skills, experience, projects, education).
 - **`resume/templates/*.tex`** are the Jinja2 source templates. **`resume/output/*.tex`** are the rendered outputs — **git-ignored** and regenerated on every build. Never edit `output/` by hand; edit the template and re-run the builder.
 - **`resume/builder/`** is a Python package, run from the repo root as `python -m resume.builder`. Default paths resolve from the package location (`PROJECT_DIR = resume/`), so no `cd` is needed:
-  - `__main__.py` — Click CLI entry point. Orchestrates the SHA change check and triggers compilation; defaults point at `resume/resume.yml`, `resume/templates`, `resume/output`.
+  - `__main__.py` — Click CLI entry point. Loads `resume.yml` and triggers compilation on every run (no change detection); defaults point at `resume/resume.yml`, `resume/templates`, `resume/output`.
   - `compiler.py` — `compile_latex()` renders every file in `templates/` to `output/` using a Jinja2 `Environment` with **LaTeX-safe delimiters** (`\BLOCK{...}`, `\VAR{...}`, `\#{...}`, `%%` line statements) instead of the default `{{ }}`/`{% %}`, which collide with LaTeX syntax.
-  - `sha.py` — `read_sha()`/`update_sha()` change detection via GitPython.
   - `logger.py` — `log_arbiter()` factory for module-level stdout loggers.
-
-### SHA-based change detection
-
-`__main__.py` only recompiles when `resume/resume.yml` has changed. It compares the `sha` field stored inside the file against the previous commit's SHA of that file (`git log -n 1 --skip 1`). On change, it writes the new SHA back and recompiles — which is why CI commits `resume/resume.yml` back after a build.
 
 When editing the Jinja2 environment, template delimiters, or which `\input{}` files `resume/templates/resume.tex` pulls in, keep `templates/` and the rendered `output/` consistent — CI compiles `resume/output/resume.tex` as the root file.
 
@@ -56,5 +51,5 @@ cd resume/output && latexmk -pdf -interaction=nonstopmode -jobname=Sabbir_Ahmed_
 
 GitHub Actions in `.github/workflows/` run on cron schedules (no PR-triggered CI):
 
-- **`resume_builder.yml`** — daily; a single job: installs `requirements.txt`, runs `python -m resume.builder`, compiles `resume/output/resume.tex` to PDF (via `dante-ev/latex-action`), moves the PDF to repo root, and commits the PDF + `resume/resume.yml`.
+- **`resume_builder.yml`** — daily; a single job: installs `requirements.txt`, runs `python -m resume.builder` (renders the `.tex`), compiles `resume/output/resume.tex` to PDF (via `dante-ev/latex-action`), moves the PDF to repo root, and commits the PDF. The PDF is only built in CI — there is no local LaTeX engine.
 - **`latest_blogs.yml`** — pulls latest posts from the blog feed (`extinctcoder.github.io/feed.xml`) into `README.md`'s `<!-- BLOG-POST-LIST -->` markers.
