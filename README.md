@@ -1,6 +1,4 @@
-<a href="https://raw.githubusercontent.com/extinctCoder/extinctCoder/master/Sabbir_Ahmed_Shourov_resume.pdf"><img align="right" src="https://img.shields.io/badge/Résumé-_-111111?style=for-the-badge&logo=readme&logoColor=white" alt="Résumé"></a>
-
-### 👋 hey, I'm Sabbir
+<h3>👋 hey, I'm Sabbir<a href="https://raw.githubusercontent.com/extinctCoder/extinctCoder/master/Sabbir_Ahmed_Shourov_resume.pdf"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/resume-dark.svg"><img align="right" src="assets/resume-light.svg" alt="Résumé"></picture></a></h3>
 
 Mostly Rust these days, and the messy backend problems I can't leave alone. Python goes way back. 🤖 robotics & AI nerd at heart.
 
