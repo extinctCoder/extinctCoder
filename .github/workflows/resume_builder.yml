@@ -1,0 +1,45 @@
+name: Compile Latex RESUME
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 2 * * *"
+
+jobs:
+  build-resume:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Render LaTeX from resume.yml
+        run: python -m resume.builder
+
+      - name: Compile PDF
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: resume.tex
+          working_directory: resume/output/
+          args: -pdf -file-line-error -interaction=nonstopmode -jobname=Sabbir_Ahmed_Shourov_resume
+
+      - name: Move PDF to repo root
+        run: mv resume/output/Sabbir_Ahmed_Shourov_resume.pdf Sabbir_Ahmed_Shourov_resume.pdf
+
+      - name: Commit PDF and updated SHA
+        uses: EndBug/add-and-commit@v9
+        with:
+          default_author: github_actor
+          add: "Sabbir_Ahmed_Shourov_resume.pdf resume/resume.yml"
