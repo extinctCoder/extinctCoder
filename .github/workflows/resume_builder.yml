@@ -2,8 +2,11 @@ name: Résumé Builder
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 2 * * *"
+  push:
+    paths:
+      - "resume/**"
+      - "requirements.txt"
+      - ".github/workflows/resume_builder.yml"
 
 jobs:
   build-resume:
@@ -13,10 +16,10 @@ jobs:
       contents: write
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.13"
           cache: "pip"
@@ -30,7 +33,7 @@ jobs:
         run: python -m resume.builder
 
       - name: Compile résumé PDF
-        uses: dante-ev/latex-action@latest
+        uses: xu-cheng/latex-action@v4
         with:
           root_file: resume.tex
           working_directory: resume/output/
@@ -40,7 +43,7 @@ jobs:
         run: mv resume/output/Sabbir_Ahmed_Shourov_resume.pdf Sabbir_Ahmed_Shourov_resume.pdf
 
       - name: Commit résumé PDF
-        uses: EndBug/add-and-commit@v9
+        uses: EndBug/add-and-commit@v10
         with:
           default_author: github_actor
           add: "Sabbir_Ahmed_Shourov_resume.pdf"
