@@ -10,7 +10,7 @@ Mostly Rust these days, and the messy backend problems I can't leave alone. Pyth
 
 ### ⚙️ how I work
 
-Distributed systems, the hard way. 🦀 Rust at the wire — protocols, memory, bytes.
+Distributed systems, the hard way. 🦀 at the wire — protocols, memory, bytes.
 
 ---
 
