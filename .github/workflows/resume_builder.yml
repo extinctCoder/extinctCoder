@@ -9,11 +9,9 @@ on:
       - ".github/workflows/resume_builder.yml"
 
 jobs:
-  build-resume:
-    name: Build and publish résumé
+  render:
+    name: Render LaTeX templates
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - name: Check out repository
         uses: actions/checkout@v7
@@ -32,6 +30,24 @@ jobs:
       - name: Render LaTeX templates
         run: python -m resume.builder
 
+      - name: Upload rendered LaTeX
+        uses: actions/upload-artifact@v7
+        with:
+          name: latex-source
+          path: resume/output/
+          retention-days: 1
+
+  compile:
+    name: Compile résumé PDF
+    needs: render
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download rendered LaTeX
+        uses: actions/download-artifact@v8
+        with:
+          name: latex-source
+          path: resume/output/
+
       - name: Compile résumé PDF
         uses: xu-cheng/latex-action@v4
         with:
@@ -39,8 +55,27 @@ jobs:
           working_directory: resume/output/
           args: -pdf -file-line-error -interaction=nonstopmode -jobname=Sabbir_Ahmed_Shourov_resume
 
-      - name: Move PDF to repository root
-        run: mv resume/output/Sabbir_Ahmed_Shourov_resume.pdf Sabbir_Ahmed_Shourov_resume.pdf
+      - name: Upload résumé PDF
+        uses: actions/upload-artifact@v7
+        with:
+          name: resume-pdf
+          path: resume/output/Sabbir_Ahmed_Shourov_resume.pdf
+          retention-days: 1
+
+  publish:
+    name: Publish résumé PDF
+    needs: compile
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Download résumé PDF
+        uses: actions/download-artifact@v8
+        with:
+          name: resume-pdf
 
       - name: Commit résumé PDF
         uses: EndBug/add-and-commit@v10
