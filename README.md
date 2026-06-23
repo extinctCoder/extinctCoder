@@ -20,4 +20,10 @@ Distributed systems, the hard way. 🦀 at the wire — protocols, memory, bytes
 <!-- BLOG-POST-LIST:END -->
 
 <!-- PROJECTS:START -->
+
+---
+
+### 🛠️ things I've built
+
+[SHOB.COM.BD](https://shob.com.bd)
 <!-- PROJECTS:END -->

@@ -4,9 +4,14 @@ on:
   workflow_dispatch:
   push:
     paths:
+      - "resume.yml"
       - "resume/**"
       - "requirements.txt"
       - ".github/workflows/resume_builder.yml"
+
+concurrency:
+  group: repo-writes
+  cancel-in-progress: false
 
 jobs:
   render:

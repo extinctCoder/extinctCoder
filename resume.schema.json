@@ -104,6 +104,10 @@
       "required": ["title", "reference", "url", "technologies", "description"],
       "properties": {
         "title": { "type": "string" },
+        "featured": {
+          "type": "boolean",
+          "description": "When true, this project is shown in the profile README projects list."
+        },
         "reference": { "type": "string" },
         "url": { "type": ["string", "null"] },
         "technologies": {

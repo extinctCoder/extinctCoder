@@ -8,27 +8,28 @@ from .logger import log_arbiter
 
 logger = log_arbiter(__name__)
 
-# resume/builder/__main__.py -> resume/
-PROJECT_DIR = Path(__file__).resolve().parent.parent
+# resume/builder/__main__.py -> resume/ (package) -> repo root
+PACKAGE_DIR = Path(__file__).resolve().parent.parent
+REPO_ROOT = PACKAGE_DIR.parent
 
 
 @command()
 @option(
     "--resume",
     "-r",
-    default=str(PROJECT_DIR / "resume.yml"),
+    default=str(REPO_ROOT / "resume.yml"),
     help="location of resume.yml file",
 )
 @option(
     "--template",
     "-t",
-    default=str(PROJECT_DIR / "templates"),
+    default=str(PACKAGE_DIR / "templates"),
     help="LaTeX TEMPLATE directory",
 )
 @option(
     "--output",
     "-o",
-    default=str(PROJECT_DIR / "output"),
+    default=str(PACKAGE_DIR / "output"),
     help="LaTeX OUTPUT directory",
 )
 def main(resume: str, template: str, output: str):

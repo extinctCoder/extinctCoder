@@ -12,19 +12,22 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is the GitHub profile repository for `extinctCoder` (username == repo name, so `README.md` renders on the GitHub profile page). It serves two purposes:
 
-1. **Résumé generator** — a Python package (`resume/builder/`) that renders a single source of truth (`resume/resume.yml`) through Jinja2-templated LaTeX into a compiled PDF (`Sabbir_Ahmed_Shourov_resume.pdf` at repo root).
-2. **Profile README** — `README.md` is hand-written and intentionally minimal. One scheduled GitHub Action (`latest_blogs.yml`) injects latest blog posts between the `<!-- BLOG-POST-LIST -->` markers; a parked `<!-- PROJECTS -->` marker block is reserved for a future projects pipeline.
+1. **Résumé generator** — a Python package (`resume/builder/`) that renders a single source of truth (`resume.yml`, at repo root) through Jinja2-templated LaTeX into a compiled PDF (`Sabbir_Ahmed_Shourov_resume.pdf` at repo root).
+2. **Profile README** — `README.md` is hand-written and intentionally minimal. Two marker blocks are machine-filled: `latest_blogs.yml` injects blog posts into `<!-- BLOG-POST-LIST -->`, and the `readme/` package injects featured projects into `<!-- PROJECTS -->` (see below).
 
 ## Résumé pipeline architecture
 
-Everything for the résumé builder lives under `resume/`. Data flow: `resume/resume.yml` → (Python renders) → `resume/output/*.tex` → (latexmk compiles) → `Sabbir_Ahmed_Shourov_resume.pdf` at repo root.
+`resume.yml` (the single source of truth) lives at the **repo root**, next to its `resume.schema.json` (validated live via the `# yaml-language-server` directive at the top of the file). Two independent packages read it.
 
-- **`resume/resume.yml`** is the only file a human edits to change résumé content (links, skills, experience, projects, education).
+Data flow: `resume.yml` → (`resume/builder` renders) → `resume/output/*.tex` → (latexmk compiles) → `Sabbir_Ahmed_Shourov_resume.pdf` at repo root.
+
+- **`resume.yml`** (root) is the only file a human edits to change résumé content (links, skills, experience, projects, education).
 - **`resume/templates/*.tex`** are the Jinja2 source templates. **`resume/output/*.tex`** are the rendered outputs — **git-ignored** and regenerated on every build. Never edit `output/` by hand; edit the template and re-run the builder.
-- **`resume/builder/`** is a Python package, run from the repo root as `python -m resume.builder`. Default paths resolve from the package location (`PROJECT_DIR = resume/`), so no `cd` is needed:
-  - `__main__.py` — Click CLI entry point. Loads `resume.yml` and triggers compilation on every run (no change detection); defaults point at `resume/resume.yml`, `resume/templates`, `resume/output`.
+- **`resume/builder/`** — the PDF builder package, run from repo root as `python -m resume.builder`. Paths resolve from the package: data from `REPO_ROOT/resume.yml`, templates/output from `resume/`. No `cd` needed.
+  - `__main__.py` — Click CLI entry point. Loads `resume.yml` and renders on every run (no change detection).
   - `compiler.py` — `compile_latex()` renders every file in `templates/` to `output/` using a Jinja2 `Environment` with **LaTeX-safe delimiters** (`\BLOCK{...}`, `\VAR{...}`, `\#{...}`, `%%` line statements) instead of the default `{{ }}`/`{% %}`, which collide with LaTeX syntax.
   - `logger.py` — `log_arbiter()` factory for module-level stdout loggers.
+- **`readme/`** — a separate, self-contained package (`python -m readme`, with its own `logger.py`) that reads the same root `resume.yml`, takes every project marked `featured: true`, and writes a comma-separated linked list into the `<!-- PROJECTS -->` markers in the root `README.md`. Projects with a `url` are linked; others render as plain text.
 
 When editing the Jinja2 environment, template delimiters, or which `\input{}` files `resume/templates/resume.tex` pulls in, keep `templates/` and the rendered `output/` consistent — CI compiles `resume/output/resume.tex` as the root file.
 
@@ -40,8 +43,11 @@ pip install -r requirements.txt
 # Render templates -> resume/output/ (run from repo root)
 python -m resume.builder
 
-# Override default paths if needed
-python -m resume.builder --resume resume/resume.yml --template resume/templates --output resume/output
+# Update the README projects list from resume.yml (featured: true)
+python -m readme
+
+# Override builder default paths if needed
+python -m resume.builder --resume resume.yml --template resume/templates --output resume/output
 
 # Compile the PDF locally (requires a LaTeX distribution with latexmk)
 cd resume/output && latexmk -pdf -interaction=nonstopmode -jobname=Sabbir_Ahmed_Shourov_resume resume.tex
@@ -49,7 +55,10 @@ cd resume/output && latexmk -pdf -interaction=nonstopmode -jobname=Sabbir_Ahmed_
 
 ## CI / automation
 
-GitHub Actions in `.github/workflows/` run on cron schedules (no PR-triggered CI):
+GitHub Actions in `.github/workflows/`:
 
-- **`resume_builder.yml`** — daily; a single job: installs `requirements.txt`, runs `python -m resume.builder` (renders the `.tex`), compiles `resume/output/resume.tex` to PDF (via `dante-ev/latex-action`), moves the PDF to repo root, and commits the PDF. The PDF is only built in CI — there is no local LaTeX engine.
-- **`latest_blogs.yml`** — pulls latest posts from the blog feed (`extinctcoder.github.io/feed.xml`) into `README.md`'s `<!-- BLOG-POST-LIST -->` markers.
+- **`resume_builder.yml`** — push to `resume.yml` / `resume/**` / `requirements.txt` / the workflow, plus manual dispatch (no cron). Three staged jobs passing files via artifacts: **render** (`python -m resume.builder` → uploads `.tex`) → **compile** (`xu-cheng/latex-action` → PDF) → **publish** (downloads the PDF, commits it).
+- **`readme_projects.yml`** — push to `resume.yml` / `readme/**` / the workflow, plus manual dispatch. Runs `python -m readme` and commits the refreshed `README.md`.
+- **`latest_blogs.yml`** — scheduled; pulls latest posts from the blog feed (`extinctcoder.github.io/feed.xml`) into `README.md`'s `<!-- BLOG-POST-LIST -->` markers.
+
+`resume_builder.yml` and `readme_projects.yml` share a `concurrency: repo-writes` group, so editing `resume.yml` (which triggers both) runs them one-at-a-time instead of racing on `git push`. The PDF is only built in CI — there is no local LaTeX engine.
