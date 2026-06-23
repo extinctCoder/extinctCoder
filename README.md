@@ -99,9 +99,9 @@ i am working on it
 new section
 ### :zap: Recent Activity
 <!--START_SECTION:activity-->
-1. 💪 Opened PR [#11](https://github.com/holocron-lang/holocron/pull/11) in [holocron-lang/holocron](https://github.com/holocron-lang/holocron)
-2. 🎉 Merged PR [#10](https://github.com/holocron-lang/holocron/pull/10) in [holocron-lang/holocron](https://github.com/holocron-lang/holocron)
-3. 💪 Opened PR [#10](https://github.com/holocron-lang/holocron/pull/10) in [holocron-lang/holocron](https://github.com/holocron-lang/holocron)
-4. 💪 Opened PR [#3](https://github.com/holocron-lang/holocron/pull/3) in [holocron-lang/holocron](https://github.com/holocron-lang/holocron)
-5. 💪 Opened PR [#2](https://github.com/holocron-lang/holocron/pull/2) in [holocron-lang/holocron](https://github.com/holocron-lang/holocron)
+1. 💪 Opened PR [#3](https://github.com/holocron-lang/holocron-lsp/pull/3) in [holocron-lang/holocron-lsp](https://github.com/holocron-lang/holocron-lsp)
+2. 💪 Opened PR [#14](https://github.com/holocron-lang/holocron/pull/14) in [holocron-lang/holocron](https://github.com/holocron-lang/holocron)
+3. 🎉 Merged PR [#2](https://github.com/holocron-lang/homebrew-holocron/pull/2) in [holocron-lang/homebrew-holocron](https://github.com/holocron-lang/homebrew-holocron)
+4. 🎉 Merged PR [#1](https://github.com/holocron-lang/homebrew-holocron/pull/1) in [holocron-lang/homebrew-holocron](https://github.com/holocron-lang/homebrew-holocron)
+5. 💪 Opened PR [#2](https://github.com/holocron-lang/homebrew-holocron/pull/2) in [holocron-lang/homebrew-holocron](https://github.com/holocron-lang/homebrew-holocron)
 <!--END_SECTION:activity-->
