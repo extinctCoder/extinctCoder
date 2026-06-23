@@ -99,9 +99,9 @@ i am working on it
 new section
 ### :zap: Recent Activity
 <!--START_SECTION:activity-->
-1. 💪 Opened PR [#3](https://github.com/extinctCoder/holocron/pull/3) in [extinctCoder/holocron](https://github.com/extinctCoder/holocron)
-2. 💪 Opened PR [#2](https://github.com/extinctCoder/holocron/pull/2) in [extinctCoder/holocron](https://github.com/extinctCoder/holocron)
-3. 💪 Opened PR [#15657](https://github.com/mason-org/mason-registry/pull/15657) in [mason-org/mason-registry](https://github.com/mason-org/mason-registry)
-4. 🎉 Merged PR [#3](https://github.com/extinctCoder/holocron/pull/3) in [extinctCoder/holocron](https://github.com/extinctCoder/holocron)
-5. 🎉 Merged PR [#7](https://github.com/extinctCoder/smart_grid/pull/7) in [extinctCoder/smart_grid](https://github.com/extinctCoder/smart_grid)
+1. 💪 Opened PR [#11](https://github.com/holocron-lang/holocron/pull/11) in [holocron-lang/holocron](https://github.com/holocron-lang/holocron)
+2. 🎉 Merged PR [#10](https://github.com/holocron-lang/holocron/pull/10) in [holocron-lang/holocron](https://github.com/holocron-lang/holocron)
+3. 💪 Opened PR [#10](https://github.com/holocron-lang/holocron/pull/10) in [holocron-lang/holocron](https://github.com/holocron-lang/holocron)
+4. 💪 Opened PR [#3](https://github.com/holocron-lang/holocron/pull/3) in [holocron-lang/holocron](https://github.com/holocron-lang/holocron)
+5. 💪 Opened PR [#2](https://github.com/holocron-lang/holocron/pull/2) in [holocron-lang/holocron](https://github.com/holocron-lang/holocron)
 <!--END_SECTION:activity-->
