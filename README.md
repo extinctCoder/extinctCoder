@@ -1,4 +1,4 @@
-<h3>👋 hey, I'm Sabbir<a href="https://raw.githubusercontent.com/extinctCoder/extinctCoder/master/Sabbir_Ahmed_Shourov_resume.pdf"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/resume-dark.svg"><img align="right" src="assets/resume-light.svg" alt="Résumé"></picture></a></h3>
+### 👋 hey, I'm Sabbir &nbsp;·&nbsp; [📄 Résumé](https://raw.githubusercontent.com/extinctCoder/extinctCoder/master/Sabbir_Ahmed_Shourov_resume.pdf)
 
 Mostly Rust these days, and the messy backend problems I can't leave alone. Python goes way back. 🤖 robotics & AI nerd at heart.
 
