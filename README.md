@@ -12,7 +12,7 @@ Distributed systems, the hard way. 🦀 at the wire — protocols, memory, bytes
 
 ---
 
-### ✍️ writing
+### ✍️ words & rambles
 
 <!-- BLOG-POST-LIST:START -->
 - [First POST](https://extinctcoder.github.io/posts/first-post/)
