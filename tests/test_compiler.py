@@ -16,18 +16,25 @@ def test_var_substitution(tmp_path):
 
 def test_for_loop(tmp_path):
     out = _render(
-        tmp_path, "l.tex", r"\BLOCK{for x in items}\VAR{x} \BLOCK{endfor}", {"items": ["a", "b", "c"]}
+        tmp_path,
+        "l.tex",
+        r"\BLOCK{for x in items}\VAR{x} \BLOCK{endfor}",
+        {"items": ["a", "b", "c"]},
     )
     assert "a b c" in out
 
 
 def test_if_true_branch(tmp_path):
-    out = _render(tmp_path, "c.tex", r"\BLOCK{if show}YES\BLOCK{else}NO\BLOCK{endif}", {"show": True})
+    out = _render(
+        tmp_path, "c.tex", r"\BLOCK{if show}YES\BLOCK{else}NO\BLOCK{endif}", {"show": True}
+    )
     assert out.strip() == "YES"
 
 
 def test_if_false_branch(tmp_path):
-    out = _render(tmp_path, "c.tex", r"\BLOCK{if show}YES\BLOCK{else}NO\BLOCK{endif}", {"show": False})
+    out = _render(
+        tmp_path, "c.tex", r"\BLOCK{if show}YES\BLOCK{else}NO\BLOCK{endif}", {"show": False}
+    )
     assert out.strip() == "NO"
 
 

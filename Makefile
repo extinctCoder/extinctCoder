@@ -1,6 +1,6 @@
 PYTHON := .venv/bin/python
 
-.PHONY: venv build readme test clean
+.PHONY: venv build readme test lint fmt clean
 
 venv:                ## create .venv and install dev dependencies
 	python3 -m venv .venv
@@ -15,6 +15,14 @@ readme:              ## refresh the README projects list from resume.yml
 
 test:                ## run the test suite
 	$(PYTHON) -m pytest -q
+
+lint:                ## ruff lint + format check
+	$(PYTHON) -m ruff check .
+	$(PYTHON) -m ruff format --check .
+
+fmt:                 ## auto-format and fix with ruff
+	$(PYTHON) -m ruff format .
+	$(PYTHON) -m ruff check --fix .
 
 clean:               ## remove generated output and caches
 	rm -rf resume/output .pytest_cache

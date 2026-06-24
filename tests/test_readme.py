@@ -46,7 +46,9 @@ def _setup(tmp_path, monkeypatch, resume_text):
 
 
 def test_main_injects_block_and_preserves_surroundings(tmp_path, monkeypatch):
-    resume = "project:\n  projects:\n    - title: X\n      url: https://x.dev\n      featured: true\n"
+    resume = (
+        "project:\n  projects:\n    - title: X\n      url: https://x.dev\n      featured: true\n"
+    )
     readme = _setup(tmp_path, monkeypatch, resume)
     rm.main()
     out = readme.read_text(encoding="utf-8")
@@ -57,7 +59,9 @@ def test_main_injects_block_and_preserves_surroundings(tmp_path, monkeypatch):
 
 
 def test_main_is_idempotent(tmp_path, monkeypatch):
-    resume = "project:\n  projects:\n    - title: X\n      url: https://x.dev\n      featured: true\n"
+    resume = (
+        "project:\n  projects:\n    - title: X\n      url: https://x.dev\n      featured: true\n"
+    )
     readme = _setup(tmp_path, monkeypatch, resume)
     rm.main()
     first = readme.read_text(encoding="utf-8")

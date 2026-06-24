@@ -38,7 +38,7 @@ def main(resume: str, template: str, output: str):
     if not resume_path.is_file():
         raise SystemExit(f"resume file not found: {resume}")
 
-    with open(resume_path, "r", encoding="utf-8") as file:
+    with open(resume_path, encoding="utf-8") as file:
         resume_data = safe_load(file)
     logger.info(f"Loaded resume data from {resume_path}")
 
