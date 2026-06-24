@@ -12,6 +12,10 @@ concurrency:
   group: repo-writes
   cancel-in-progress: false
 
+# Your blog/RSS feed. Change this when you fork.
+env:
+  BLOG_FEED: "https://extinctcoder.github.io/feed.xml"
+
 jobs:
   sync-blog-posts:
     name: Sync latest blog posts
@@ -23,4 +27,4 @@ jobs:
       - name: Update README with latest posts
         uses: gautamkrishnar/blog-post-workflow@v1
         with:
-          feed_list: "https://extinctcoder.github.io/feed.xml"
+          feed_list: ${{ env.BLOG_FEED }}

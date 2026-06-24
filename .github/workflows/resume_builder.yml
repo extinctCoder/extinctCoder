@@ -13,6 +13,10 @@ concurrency:
   group: repo-writes
   cancel-in-progress: false
 
+# Base filename for the generated PDF (no extension). Change this when you fork.
+env:
+  PDF_NAME: Sabbir_Ahmed_Shourov_resume
+
 jobs:
   render:
     name: Render LaTeX templates
@@ -58,13 +62,13 @@ jobs:
         with:
           root_file: resume.tex
           working_directory: resume/output/
-          args: -pdf -file-line-error -interaction=nonstopmode -jobname=Sabbir_Ahmed_Shourov_resume
+          args: -pdf -file-line-error -interaction=nonstopmode -jobname=${{ env.PDF_NAME }}
 
       - name: Upload résumé PDF
         uses: actions/upload-artifact@v7
         with:
           name: resume-pdf
-          path: resume/output/Sabbir_Ahmed_Shourov_resume.pdf
+          path: resume/output/${{ env.PDF_NAME }}.pdf
           retention-days: 1
 
   publish:
@@ -86,4 +90,4 @@ jobs:
         uses: EndBug/add-and-commit@v10
         with:
           default_author: github_actor
-          add: "Sabbir_Ahmed_Shourov_resume.pdf"
+          add: "${{ env.PDF_NAME }}.pdf"

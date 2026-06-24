@@ -8,7 +8,8 @@ from .logger import log_arbiter
 
 logger = log_arbiter(__name__)
 
-USER = "extinctCoder"
+# Auto-detected from the repository owner in CI; the fallback is used for local runs.
+USER = os.environ.get("GITHUB_REPOSITORY_OWNER", "extinctCoder")
 MAX_ITEMS = 5
 
 REPO_ROOT = Path(__file__).resolve().parent.parent

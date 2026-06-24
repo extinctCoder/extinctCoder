@@ -15,6 +15,8 @@ This is the GitHub profile repository for `extinctCoder` (username == repo name,
 1. **Résumé generator** — a Python package (`resume/builder/`) that renders a single source of truth (`resume.yml`, at repo root) through Jinja2-templated LaTeX into a compiled PDF (`Sabbir_Ahmed_Shourov_resume.pdf` at repo root).
 2. **Profile README** — `README.md` is hand-written and intentionally minimal. Three marker blocks are machine-filled: `latest_blogs.yml` → `<!-- BLOG-POST-LIST -->`, `python -m readme` → `<!-- PROJECTS -->` (featured projects), and `python -m readme.oss` → `<!-- OSS -->` (recent open-source PRs). See below.
 
+`USAGE.md` explains how to fork and adapt this whole setup for another person's profile (the per-user values, what to edit, how to run it).
+
 ## Résumé pipeline architecture
 
 `resume.yml` (the single source of truth) lives at the **repo root**, next to its `resume.schema.json` (validated live via the `# yaml-language-server` directive at the top of the file). Two independent packages read it.
