@@ -6,7 +6,7 @@ on:
     paths:
       - "resume.yml"
       - "resume/**"
-      - "requirements.txt"
+      - "pyproject.toml"
       - ".github/workflows/resume_builder.yml"
 
 concurrency:
@@ -30,7 +30,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -e .
 
       - name: Render LaTeX templates
         run: python -m resume.builder

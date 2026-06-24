@@ -1,3 +1,28 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "extinctcoder-profile"
+version = "0.1.0"
+description = "Résumé builder and GitHub profile README tooling."
+requires-python = ">=3.13"
+dependencies = [
+    "click==8.4.1",
+    "jinja2==3.1.6",
+    "pyyaml==6.0.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==9.1.1",
+    "jsonschema==4.26.0",
+    "ruff==0.15.18",
+]
+
+[tool.setuptools]
+packages = ["resume", "resume.builder", "readme"]
+
 [tool.ruff]
 line-length = 100
 target-version = "py313"

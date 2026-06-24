@@ -33,12 +33,12 @@ When editing the Jinja2 environment, template delimiters, or which `\input{}` fi
 
 ## Commands
 
-Dependencies: plain `pip` + `requirements.txt` (runtime) and `requirements-dev.txt` (adds `pytest`, `jsonschema`, `ruff`); Python 3.13. Tooling config (ruff, pytest) lives in `pyproject.toml`. A `Makefile` wraps the common tasks (`make venv` / `build` / `readme` / `test` / `lint` / `fmt`).
+Everything lives in `pyproject.toml`: runtime deps in `[project.dependencies]`, dev tools (`pytest`, `jsonschema`, `ruff`) in the `dev` optional group, and ruff/pytest config under `[tool.*]`. Python 3.13. The repo installs as an **editable** package (`pip install -e .`) — editable is required so the `resume.yml`-at-root path logic (`REPO_ROOT = __file__/../..`) still resolves; a normal install would relocate the code and break it. A `Makefile` wraps the common tasks (`make venv` / `build` / `readme` / `test` / `lint` / `fmt`).
 
 ```bash
-# Set up environment
+# Set up environment (editable install + dev tools)
 python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
+pip install -e ".[dev]"
 
 # Render templates -> resume/output/ (run from repo root)
 python -m resume.builder
@@ -46,7 +46,7 @@ python -m resume.builder
 # Update the README projects list from resume.yml (featured: true)
 python -m readme
 
-# Run the test suite (needs requirements-dev.txt)
+# Run the test suite
 pytest -q
 
 # Lint + format check (ruff)
@@ -63,11 +63,11 @@ cd resume/output && latexmk -pdf -interaction=nonstopmode -jobname=Sabbir_Ahmed_
 
 GitHub Actions in `.github/workflows/`:
 
-- **`resume_builder.yml`** — push to `resume.yml` / `resume/**` / `requirements.txt` / the workflow, plus manual dispatch (no cron). Three staged jobs passing files via artifacts: **render** (`python -m resume.builder` → uploads `.tex`) → **compile** (`xu-cheng/latex-action` → PDF) → **publish** (downloads the PDF, commits it).
+- **`resume_builder.yml`** — push to `resume.yml` / `resume/**` / `pyproject.toml` / the workflow, plus manual dispatch (no cron). Three staged jobs passing files via artifacts: **render** (`python -m resume.builder` → uploads `.tex`) → **compile** (`xu-cheng/latex-action` → PDF) → **publish** (downloads the PDF, commits it).
 - **`readme_projects.yml`** — push to `resume.yml` / `readme/**` / the workflow, plus manual dispatch. Runs `python -m readme` and commits the refreshed `README.md`.
 - **`latest_blogs.yml`** — scheduled; pulls latest posts from the blog feed (`extinctcoder.github.io/feed.xml`) into `README.md`'s `<!-- BLOG-POST-LIST -->` markers.
-- **`tests.yml`** — push to code / `resume.yml` / `tests/`; installs `requirements-dev.txt`, runs `ruff` (lint + format check), then `pytest` (unit tests for the builder + readme, plus schema validation of `resume.yml`).
+- **`tests.yml`** — push to code / `resume.yml` / `tests/` / `pyproject.toml`; `pip install -e ".[dev]"`, then `ruff` (lint + format check), then `pytest` (unit tests for the builder + readme, plus schema validation of `resume.yml`).
 
-Dependency hygiene is automated via `.github/dependabot.yml`, which opens weekly PRs to keep GitHub Actions and pip dependencies current.
+Dependency hygiene is automated via `.github/dependabot.yml`, which opens weekly PRs to keep GitHub Actions and (via `pyproject.toml`) pip dependencies current.
 
 `resume_builder.yml` and `readme_projects.yml` share a `concurrency: repo-writes` group, so editing `resume.yml` (which triggers both) runs them one-at-a-time instead of racing on `git push`. The PDF is only built in CI — there is no local LaTeX engine.

@@ -5,7 +5,7 @@ PYTHON := .venv/bin/python
 venv:                ## create .venv and install dev dependencies
 	python3 -m venv .venv
 	$(PYTHON) -m pip install --upgrade pip
-	$(PYTHON) -m pip install -r requirements-dev.txt
+	$(PYTHON) -m pip install -e ".[dev]"
 
 build:               ## render LaTeX templates -> resume/output/
 	$(PYTHON) -m resume.builder
