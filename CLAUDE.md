@@ -13,7 +13,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 This is the GitHub profile repository for `extinctCoder` (username == repo name, so `README.md` renders on the GitHub profile page). It serves two purposes:
 
 1. **Résumé generator** — a Python package (`resume/builder/`) that renders a single source of truth (`resume.yml`, at repo root) through Jinja2-templated LaTeX into a compiled PDF (`Sabbir_Ahmed_Shourov_resume.pdf` at repo root).
-2. **Profile README** — `README.md` is hand-written and intentionally minimal. Two marker blocks are machine-filled: `latest_blogs.yml` injects blog posts into `<!-- BLOG-POST-LIST -->`, and the `readme/` package injects featured projects into `<!-- PROJECTS -->` (see below).
+2. **Profile README** — `README.md` is hand-written and intentionally minimal. Three marker blocks are machine-filled: `latest_blogs.yml` → `<!-- BLOG-POST-LIST -->`, `python -m readme` → `<!-- PROJECTS -->` (featured projects), and `python -m readme.oss` → `<!-- OSS -->` (recent open-source PRs). See below.
 
 ## Résumé pipeline architecture
 
@@ -27,7 +27,9 @@ Data flow: `resume.yml` → (`resume/builder` renders) → `resume/output/*.tex`
   - `__main__.py` — Click CLI entry point. Loads `resume.yml` and renders on every run (no change detection).
   - `compiler.py` — `compile_latex()` renders every file in `templates/` to `output/` using a Jinja2 `Environment` with **LaTeX-safe delimiters** (`\BLOCK{...}`, `\VAR{...}`, `\#{...}`, `%%` line statements) instead of the default `{{ }}`/`{% %}`, which collide with LaTeX syntax.
   - `logger.py` — `log_arbiter()` factory for module-level stdout loggers.
-- **`readme/`** — a separate, self-contained package (`python -m readme`, with its own `logger.py`) that reads the same root `resume.yml`, takes every project marked `featured: true`, and writes a comma-separated linked list into the `<!-- PROJECTS -->` markers in the root `README.md`. Projects with a `url` are linked; others render as plain text.
+- **`readme/`** — a separate, self-contained package (its own `logger.py`) with two README updaters:
+  - `python -m readme` — reads the root `resume.yml`, takes every project marked `featured: true`, and writes a comma-separated linked list into the `<!-- PROJECTS -->` markers. Projects with a `url` are linked; others render as plain text.
+  - `python -m readme.oss` — queries the GitHub Search API (stdlib `urllib`, no extra deps; uses `GITHUB_TOKEN` if set) for recent PRs authored by the user in repos they don't own, and writes them into the `<!-- OSS -->` markers. On API failure it logs and leaves the README untouched.
 
 When editing the Jinja2 environment, template delimiters, or which `\input{}` files `resume/templates/resume.tex` pulls in, keep `templates/` and the rendered `output/` consistent — CI compiles `resume/output/resume.tex` as the root file.
 
@@ -66,8 +68,9 @@ GitHub Actions in `.github/workflows/`:
 - **`resume_builder.yml`** — push to `resume.yml` / `resume/**` / `pyproject.toml` / the workflow, plus manual dispatch (no cron). Three staged jobs passing files via artifacts: **render** (`python -m resume.builder` → uploads `.tex`) → **compile** (`xu-cheng/latex-action` → PDF) → **publish** (downloads the PDF, commits it).
 - **`readme_projects.yml`** — push to `resume.yml` / `readme/**` / the workflow, plus manual dispatch. Runs `python -m readme` and commits the refreshed `README.md`.
 - **`latest_blogs.yml`** — scheduled; pulls latest posts from the blog feed (`extinctcoder.github.io/feed.xml`) into `README.md`'s `<!-- BLOG-POST-LIST -->` markers.
+- **`oss_contributions.yml`** — scheduled (daily); runs `python -m readme.oss` to refresh recent open-source PRs in the `<!-- OSS -->` markers, then commits `README.md`.
 - **`tests.yml`** — push to code / `resume.yml` / `tests/` / `pyproject.toml`; `pip install -e ".[dev]"`, then `ruff` (lint + format check), then `pytest` (unit tests for the builder + readme, plus schema validation of `resume.yml`).
 
 Dependency hygiene is automated via `.github/dependabot.yml`, which opens weekly PRs to keep GitHub Actions and (via `pyproject.toml`) pip dependencies current.
 
-`resume_builder.yml` and `readme_projects.yml` share a `concurrency: repo-writes` group, so editing `resume.yml` (which triggers both) runs them one-at-a-time instead of racing on `git push`. The PDF is only built in CI — there is no local LaTeX engine.
+All four workflows that commit to the repo (`resume_builder`, `readme_projects`, `latest_blogs`, `oss_contributions`) share a `concurrency: repo-writes` group, so they run one-at-a-time instead of racing on `git push`. The PDF is only built in CI — there is no local LaTeX engine.

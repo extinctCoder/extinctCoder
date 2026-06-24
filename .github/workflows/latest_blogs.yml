@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: repo-writes
+  cancel-in-progress: false
+
 jobs:
   sync-blog-posts:
     name: Sync latest blog posts
