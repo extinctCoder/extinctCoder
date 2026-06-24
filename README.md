@@ -15,8 +15,11 @@ Distributed systems, the hard way. 🦀 at the wire — protocols, memory, bytes
 ### ✍️ words & rambles
 
 <!-- BLOG-POST-LIST:START -->
-- [First POST](https://extinctcoder.github.io/posts/first-post/)
-- [Getting Started](https://extinctcoder.github.io/posts/getting-started/)
+- [Making Technical Decisions You Won&#39;t Regret](https://extinctcoder.github.io/posts/technical-decisions-you-wont-regret/)
+- [Code Review That Actually Improves the Codebase](https://extinctcoder.github.io/posts/code-review-that-improves-the-codebase/)
+- [Lessons from Leading Backend Teams](https://extinctcoder.github.io/posts/lessons-leading-backend-teams/)
+- [Observability: Logs, Metrics, and Traces — What to Instrument](https://extinctcoder.github.io/posts/observability-logs-metrics-traces/)
+- [Designing REST APIs That Age Well](https://extinctcoder.github.io/posts/designing-rest-apis-that-age-well/)
 <!-- BLOG-POST-LIST:END -->
 
 <!-- PROJECTS:START -->
