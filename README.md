@@ -37,9 +37,9 @@ Distributed systems, the hard way. 🦀 at the wire — protocols, memory, bytes
 
 ### 🌍 out in the open
 
+- [zed-industries/extensions](https://github.com/zed-industries/extensions) [#6598](https://github.com/zed-industries/extensions/pull/6598) — Add holocron extension
 - [holocron-lang/holocron-lsp](https://github.com/holocron-lang/holocron-lsp) [#3](https://github.com/holocron-lang/holocron-lsp/pull/3) — ci(release): gate publish on actual tag advance
 - [holocron-lang/holocron](https://github.com/holocron-lang/holocron) [#14](https://github.com/holocron-lang/holocron/pull/14) — ci(release): gate publish on actual tag advance
 - [holocron-lang/homebrew-holocron](https://github.com/holocron-lang/homebrew-holocron) [#2](https://github.com/holocron-lang/homebrew-holocron/pull/2) — fix: bump formulas to v0.5.0 / v0.2.0
 - [holocron-lang/homebrew-holocron](https://github.com/holocron-lang/homebrew-holocron) [#1](https://github.com/holocron-lang/homebrew-holocron/pull/1) — docs: drop misleading 'not published' status
-- [holocron-lang/.github](https://github.com/holocron-lang/.github) [#1](https://github.com/holocron-lang/.github/pull/1) — docs: refresh org profile — list all repos, drop bail-on-first
 <!-- OSS:END -->
