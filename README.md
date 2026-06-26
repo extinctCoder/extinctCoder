@@ -28,7 +28,7 @@ Distributed systems, the hard way. 🦀 at the wire — protocols, memory, bytes
 
 ### 🛠️ things I've built
 
-[SHOB.COM.BD](https://shob.com.bd)
+[SHOB.COM.BD](https://extinctcoder.github.io/projects/shob/), [Study Giveway](https://extinctcoder.github.io/projects/study-giveaway), [Data Citadel](https://extinctcoder.github.io/projects/data-citadel), [Assets Nexus](https://extinctcoder.github.io/projects/assets-nexus)
 <!-- PROJECTS:END -->
 
 <!-- OSS:START -->
