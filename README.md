@@ -15,11 +15,11 @@ Distributed systems, the hard way. 🦀 at the wire — protocols, memory, bytes
 ### ✍️ words & rambles
 
 <!-- BLOG-POST-LIST:START -->
+- [What Actually Renders in an RSS Feed](https://extinctcoder.github.io/posts/what-actually-renders-in-an-rss-feed/)
 - [Designing for the Bad Days](https://extinctcoder.github.io/posts/designing-for-the-bad-days/)
 - [Making the Pipeline Run Itself](https://extinctcoder.github.io/posts/making-the-pipeline-run-itself/)
 - [Wiring Obsidian to a Static Site with GitHub Actions](https://extinctcoder.github.io/posts/wiring-obsidian-to-a-static-site-with-github-actions/)
 - [Your Notes App Is Your CMS](https://extinctcoder.github.io/posts/your-notes-app-is-your-cms/)
-- [Making Technical Decisions You Won&#39;t Regret](https://extinctcoder.github.io/posts/technical-decisions-you-wont-regret/)
 <!-- BLOG-POST-LIST:END -->
 
 <!-- PROJECTS:START -->
