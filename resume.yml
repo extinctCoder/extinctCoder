@@ -102,7 +102,7 @@ project:
     - title: SHOB.COM.BD
       featured: true
       reference: TecnoBZ
-      url: https://shob.com.bd
+      url: https://extinctcoder.github.io/projects/shob/
       technologies:
         - Flask
         - React
@@ -117,9 +117,9 @@ project:
           individual consumers, facilitating wholesale and retail transactions respectively,
           and streamlining procurement and sales processes
     - title: Study Giveway
-      featured: false
+      featured: true
       reference: YGBL
-      url: null
+      url: https://extinctcoder.github.io/projects/study-giveaway
       technologies:
         - Django
         - Git
@@ -129,9 +129,9 @@ project:
         - An integrated platform for managing student applications, scholarships, and
           interactions among admin, students, institutes, and agencies
     - title: Data Citadel
-      featured: false
+      featured: true
       reference: ISTL
-      url: null
+      url: https://extinctcoder.github.io/projects/data-citadel
       technologies:
         - Git
         - Linux
@@ -144,9 +144,9 @@ project:
           drive protection, lock-down capabilities, advanced monitoring, enabled real-time
           incident response, and secure synchronization
     - title: Assets Nexus
-      featured: false
+      featured: true
       reference: ISTL
-      url: null
+      url: https://extinctcoder.github.io/projects/assets-nexus
       technologies:
         - Linux Server
         - MySQL
