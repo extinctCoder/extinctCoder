@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Résumé builder and GitHub profile README tooling."
 requires-python = ">=3.13"
 dependencies = [
-    "click==8.4.1",
+    "click==8.4.2",
     "jinja2==3.1.6",
     "pyyaml==6.0.3",
 ]
